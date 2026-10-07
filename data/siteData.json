@@ -1,0 +1,1168 @@
+{
+  "SecurityIndustries": {
+    "templateComponents": {
+      "template-1": {
+        "shared": {
+          "Topbar": "SecurityTopbar1",
+          "Header": "SecurityHeader1",
+          "Footer": "SecurityFooter1"
+        },
+        "pages": {
+          "home": {
+            "components": [
+              {
+                "key": "Banner",
+                "component": "SecurityBanner1"
+              },
+              {
+                "key": "About",
+                "component": "SecurityAbout1"
+              },
+              {
+                "key": "Services",
+                "component": "SecurityServices1"
+              },
+              {
+                "key": "Industries",
+                "component": "SecurityIndustries1"
+              },
+              {
+                "key": "Stats",
+                "component": "SecurityStats1"
+              },
+              {
+                "key": "Testimonial",
+                "component": "SecurityTestimonial1"
+              },
+              {
+                "key": "Cta",
+                "component": "SecurityCta1"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "sections": {
+      "Topbar": {
+        "variants": {
+          "SecurityTopbar1": {
+            "phone": "+91 98765 43210",
+            "phoneHref": "tel:+919876543210",
+            "email": "info@yourcompany.com",
+            "emailHref": "mailto:info@yourcompany.com",
+            "supportText": "24/7 Security Support",
+            "supportIcon": "clock"
+          }
+        }
+      },
+      "Header": {
+        "variants": {
+          "SecurityHeader1": {
+            "site": {
+              "siteName": "SAFEGUARD",
+              "tagline": "SECURITY SERVICES",
+              "logo": {
+                "light": "/logo.png",
+                "normal": "/logo.png",
+                "alt": "Safeguard Security Services"
+              }
+            },
+            "meta": {
+              "siteTitle": "Safeguard Security Services | Professional Security Guard Services",
+              "siteDescription": "Reliable and professional security guard services for residential, commercial, industrial and event needs.",
+              "keywords": [
+                "security guard services",
+                "manned security guards",
+                "24/7 security monitoring",
+                "gate and entry security",
+                "event security",
+                "vip security",
+                "mobile patrol services",
+                "commercial security",
+                "industrial security",
+                "residential security"
+              ]
+            },
+            "nav": [
+              {
+                "label": "Home",
+                "href": "/"
+              },
+              {
+                "label": "About Us",
+                "href": "/about"
+              },
+              {
+                "label": "Our Services",
+                "href": "/services",
+                "children": [
+                  {
+                    "label": "Manned Security Guards",
+                    "href": "/services/manned-security-guards"
+                  },
+                  {
+                    "label": "24/7 Security Monitoring",
+                    "href": "/services/security-monitoring"
+                  },
+                  {
+                    "label": "Gate & Entry Security",
+                    "href": "/services/gate-entry-security"
+                  },
+                  {
+                    "label": "Event & VIP Security",
+                    "href": "/services/event-vip-security"
+                  },
+                  {
+                    "label": "Mobile Patrol Services",
+                    "href": "/services/mobile-patrol-services"
+                  },
+                  {
+                    "label": "Commercial & Industrial Security",
+                    "href": "/services/commercial-industrial-security"
+                  }
+                ]
+              },
+              {
+                "label": "Industries",
+                "href": "/industries"
+              },
+              {
+                "label": "Our Team",
+                "href": "/team"
+              },
+              {
+                "label": "Gallery",
+                "href": "/gallery"
+              },
+              {
+                "label": "FAQ",
+                "href": "/faq"
+              }
+            ],
+            "buttons": [
+              {
+                "label": "Contact Us",
+                "href": "/contact",
+                "icon": "arrow-right",
+                "variant": "primary"
+              }
+            ],
+            "mobileMenu": {
+              "openLabel": "Open menu",
+              "closeLabel": "Close menu",
+              "viewAllLabel": "View All"
+            }
+          }
+        }
+      },
+      "Banner": {
+        "variants": {
+          "SecurityBanner1": {
+            "autoplay": true,
+            "interval": 6000,
+            "slides": [
+              {
+                "id": 1,
+                "badge": "YOUR SAFETY OUR PRIORITY",
+                "title": {
+                  "normal": "Professional",
+                  "highlighted": "Security Guard",
+                  "postTitle": "Services"
+                },
+                "highlights": [
+                  {
+                    "id": 1,
+                    "icon": "check",
+                    "label": "Trained"
+                  },
+                  {
+                    "id": 2,
+                    "icon": "check",
+                    "label": "Verified"
+                  },
+                  {
+                    "id": 3,
+                    "icon": "check",
+                    "label": "Reliable"
+                  },
+                  {
+                    "id": 4,
+                    "icon": "check",
+                    "label": "24/7 Support"
+                  }
+                ],
+                "desc": {
+                  "plain": "We provide reliable and professional security guard services for residential, commercial, industrial and event needs.",
+                  "parts": [
+                    {
+                      "text": "We provide reliable and professional security guard services for residential, commercial, industrial and event needs."
+                    }
+                  ]
+                },
+                "buttons": [
+                  {
+                    "label": "Contact Us",
+                    "href": "/contact",
+                    "icon": "arrow-right",
+                    "variant": "primary"
+                  },
+                  {
+                    "label": "Our Services",
+                    "href": "/services",
+                    "variant": "outline"
+                  }
+                ],
+                "image": {
+                  "src": "/security/guard1.jpg",
+                  "alt": "Uniformed security guard speaking on a radio in front of a team of guards"
+                }
+              },
+              {
+                "id": 2,
+                "badge": "YOUR SAFETY OUR PRIORITY",
+                "title": {
+                  "normal": "Professional",
+                  "highlighted": "Security Guard",
+                  "postTitle": "Services"
+                },
+                "highlights": [
+                  {
+                    "id": 1,
+                    "icon": "check",
+                    "label": "Trained"
+                  },
+                  {
+                    "id": 2,
+                    "icon": "check",
+                    "label": "Verified"
+                  },
+                  {
+                    "id": 3,
+                    "icon": "check",
+                    "label": "Reliable"
+                  },
+                  {
+                    "id": 4,
+                    "icon": "check",
+                    "label": "24/7 Support"
+                  }
+                ],
+                "desc": {
+                  "plain": "We provide reliable and professional security guard services for residential, commercial, industrial and event needs.",
+                  "parts": [
+                    {
+                      "text": "We provide reliable and professional security guard services for residential, commercial, industrial and event needs."
+                    }
+                  ]
+                },
+                "buttons": [
+                  {
+                    "label": "Contact Us",
+                    "href": "/contact",
+                    "icon": "arrow-right",
+                    "variant": "primary"
+                  },
+                  {
+                    "label": "Our Services",
+                    "href": "/services",
+                    "variant": "outline"
+                  }
+                ],
+                "image": {
+                  "src": "/security/guard2.jpg",
+                  "alt": "Security guard on duty at the entrance of a corporate building"
+                }
+              },
+              {
+                "id": 3,
+                "badge": "YOUR SAFETY OUR PRIORITY",
+                "title": {
+                  "normal": "Professional",
+                  "highlighted": "Security Guard",
+                  "postTitle": "Services"
+                },
+                "highlights": [
+                  {
+                    "id": 1,
+                    "icon": "check",
+                    "label": "Trained"
+                  },
+                  {
+                    "id": 2,
+                    "icon": "check",
+                    "label": "Verified"
+                  },
+                  {
+                    "id": 3,
+                    "icon": "check",
+                    "label": "Reliable"
+                  },
+                  {
+                    "id": 4,
+                    "icon": "check",
+                    "label": "24/7 Support"
+                  }
+                ],
+                "desc": {
+                  "plain": "We provide reliable and professional security guard services for residential, commercial, industrial and event needs.",
+                  "parts": [
+                    {
+                      "text": "We provide reliable and professional security guard services for residential, commercial, industrial and event needs."
+                    }
+                  ]
+                },
+                "buttons": [
+                  {
+                    "label": "Contact Us",
+                    "href": "/contact",
+                    "icon": "arrow-right",
+                    "variant": "primary"
+                  },
+                  {
+                    "label": "Our Services",
+                    "href": "/services",
+                    "variant": "outline"
+                  }
+                ],
+                "image": {
+                  "src": "/security/guard3.jpg",
+                  "alt": "Team of uniformed security guards standing together on patrol"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "About": {
+        "variants": {
+          "SecurityAbout1": {
+            "banner": {
+              "title": "About Us",
+              "image": "/security/guard2.jpg",
+              "items": [
+                {
+                  "label": "Home",
+                  "href": "/"
+                },
+                {
+                  "label": "About Us"
+                }
+              ]
+            },
+            "badge": "ABOUT US",
+            "title": {
+              "normal": "Your Trusted",
+              "highlighted": "Security Partner"
+            },
+            "paragraphs": [
+              "We are a professional security guard service provider committed to delivering reliable, trained and trustworthy security solutions. Our focus is on safety, discipline and customer satisfaction, ensuring a secure environment for homes, offices, industries and events."
+            ],
+            "image": {
+              "src": "/security/guard5.jpg",
+              "alt": "Security guard in uniform standing in front of a modern glass building"
+            },
+            "experienceBadge": {
+              "icon": "shield",
+              "number": 10,
+              "suffix": "+",
+              "label": "Years of Experience"
+            },
+            "features": [
+              {
+                "id": 1,
+                "number": "01",
+                "icon": "user-shield",
+                "title": "Trained & Verified Guards",
+                "description": "Well-trained, background verified professionals."
+              },
+              {
+                "id": 2,
+                "number": "02",
+                "icon": "shield-check",
+                "title": "Reliable Security Services",
+                "description": "Consistent and disciplined security support."
+              },
+              {
+                "id": 3,
+                "number": "03",
+                "icon": "cctv",
+                "title": "24/7 Monitoring & Support",
+                "description": "Round-the-clock vigilance and quick response."
+              },
+              {
+                "id": 4,
+                "number": "04",
+                "icon": "users",
+                "title": "Customized Security Plans",
+                "description": "Tailored solutions for residential, commercial, industrial and events."
+              }
+            ],
+            "button": {
+              "label": "About Our Agency",
+              "href": "/about",
+              "icon": "arrow-right"
+            }
+          }
+        }
+      },
+      "Services": {
+        "variants": {
+          "SecurityServices1": {
+            "banner": {
+              "title": "Our Services",
+              "image": "/security/guard3.jpg",
+              "items": [
+                {
+                  "label": "Home",
+                  "href": "/"
+                },
+                {
+                  "label": "Services"
+                }
+              ]
+            },
+            "badge": "SERVICES",
+            "title": {
+              "normal": "Professional",
+              "highlighted": "Security Guard",
+              "postTitle": "Services for Complete Safety"
+            },
+            "desc": "We provide reliable and professional security guard services for residential, commercial, industrial and event needs. Our trained guards ensure a safe and secure environment at all times.",
+            "homeVisibleCount": 6,
+            "services": [
+              {
+                "id": 1,
+                "slug": "manned-security-guards",
+                "icon": "user-shield",
+                "image": "/security/guard5.jpg",
+                "title": "Manned Security Guards",
+                "description": "Well-trained and professional security guards for residential, commercial, industrial and event premises.",
+                "button": {
+                  "label": "Discover More",
+                  "href": "/services/manned-security-guards"
+                }
+              },
+              {
+                "id": 2,
+                "slug": "security-monitoring",
+                "icon": "cctv",
+                "image": "/security/guard6.jpg",
+                "title": "24/7 Security Monitoring",
+                "description": "Round-the-clock surveillance and monitoring to ensure quick response and complete safety.",
+                "button": {
+                  "label": "Discover More",
+                  "href": "/services/security-monitoring"
+                }
+              },
+              {
+                "id": 3,
+                "slug": "gate-entry-security",
+                "icon": "door-closed",
+                "image": "/security/guard7.jpg",
+                "title": "Gate & Entry Security",
+                "description": "Trained guards for gate management, access control and visitor verification to maintain a secure environment.",
+                "button": {
+                  "label": "Discover More",
+                  "href": "/services/gate-entry-security"
+                }
+              },
+              {
+                "id": 4,
+                "slug": "event-vip-security",
+                "icon": "users",
+                "image": "/security/guard8.jpg",
+                "title": "Event & VIP Security",
+                "description": "Experienced security personnel for events, functions, VIP protection and crowd management.",
+                "button": {
+                  "label": "Discover More",
+                  "href": "/services/event-vip-security"
+                }
+              },
+              {
+                "id": 5,
+                "slug": "mobile-patrol-services",
+                "icon": "footprints",
+                "image": "/security/guard9.jpg",
+                "title": "Mobile Patrol Services",
+                "description": "Regular patrolling and inspection services to prevent unauthorized access and ensure safety.",
+                "button": {
+                  "label": "Discover More",
+                  "href": "/services/mobile-patrol-services"
+                }
+              },
+              {
+                "id": 6,
+                "slug": "commercial-industrial-security",
+                "icon": "shield-check",
+                "image": "/security/guard10.jpg",
+                "title": "Commercial & Industrial Security",
+                "description": "Customized security guard solutions for offices, factories, warehouses and business premises.",
+                "button": {
+                  "label": "Discover More",
+                  "href": "/services/commercial-industrial-security"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "Industries": {
+        "variants": {
+          "SecurityIndustries1": {
+            "banner": {
+              "title": "Industries",
+              "image": "/security/guard1.jpg",
+              "items": [
+                {
+                  "label": "Home",
+                  "href": "/"
+                },
+                {
+                  "label": "Industries"
+                }
+              ]
+            },
+            "heading": {
+              "badge": "INDUSTRY",
+              "title": "Industries We Serve"
+            },
+            "badge": "INDUSTRIES WE SERVE",
+            "title": {
+              "normal": "Diverse Sectors,",
+              "highlighted": "Reliable Security",
+              "postTitle": "Solutions"
+            },
+            "desc": "We provide trained and professional security guards to a wide range of industries, delivering customized security solutions to meet the unique needs of each sector.",
+            "features": [
+              {
+                "id": 1,
+                "icon": "check",
+                "title": "Industry-Specific Security Plans"
+              },
+              {
+                "id": 2,
+                "icon": "check",
+                "title": "Trained & Verified Security Personnel"
+              },
+              {
+                "id": 3,
+                "icon": "check",
+                "title": "Customizable Solutions"
+              },
+              {
+                "id": 4,
+                "icon": "check",
+                "title": "24/7 Support & Monitoring"
+              }
+            ],
+            "button": {
+              "label": "View More",
+              "href": "/industries",
+              "icon": "arrow-right"
+            },
+            "items": [
+              {
+                "id": 1,
+                "icon": "building",
+                "image": "/security/guard11.jpg",
+                "title": "Corporate & Commercial",
+                "description": "Offices, IT Parks, Business Centers, Corporate Buildings"
+              },
+              {
+                "id": 2,
+                "icon": "home",
+                "image": "/security/guard4.jpg",
+                "title": "Residential Societies",
+                "description": "Apartments, Gated Communities, Residential Complexes"
+              },
+              {
+                "id": 3,
+                "icon": "factory",
+                "image": "/security/guard5.jpg",
+                "title": "Industrial Sector",
+                "description": "Factories, Warehouses, Manufacturing Units"
+              },
+              {
+                "id": 4,
+                "icon": "hospital",
+                "image": "/security/guard6.jpg",
+                "title": "Healthcare Sector",
+                "description": "Hospitals, Clinics, Nursing Homes, Diagnostic Centers"
+              },
+              {
+                "id": 5,
+                "icon": "school",
+                "image": "/security/guard7.jpg",
+                "title": "Educational Institutions",
+                "description": "Schools, Colleges, Universities, Training Institutes"
+              },
+              {
+                "id": 6,
+                "icon": "shopping-bag",
+                "image": "/security/guard8.jpg",
+                "title": "Retail & Shopping",
+                "description": "Malls, Shopping Centers, Retail Stores, Showrooms"
+              },
+              {
+                "id": 7,
+                "icon": "hotel",
+                "image": "/security/guard9.jpg",
+                "title": "Hotels & Hospitality",
+                "description": "Hotels, Resorts, Restaurants, Banquet Halls"
+              },
+              {
+                "id": 8,
+                "icon": "landmark",
+                "image": "/security/guard10.jpg",
+                "title": "Government & Public Sector",
+                "description": "Government Offices, Public Buildings, Civic Facilities"
+              },
+              {
+                "id": 9,
+                "icon": "truck",
+                "image": "/security/guard7.jpg",
+                "title": "Logistics & Warehousing",
+                "description": "Logistics Hubs, Distribution Centers, Storage Facilities"
+              },
+              {
+                "id": 10,
+                "icon": "calendar",
+                "image": "/security/guard3.jpg",
+                "title": "Events & Exhibitions",
+                "description": "Exhibitions, Conferences, Events, Trade Shows"
+              },
+              {
+                "id": 11,
+                "icon": "plane",
+                "image": "/security/guard10.jpg",
+                "title": "Transportation & Aviation",
+                "description": "Airports, Metro Stations, Transport Hubs, Terminals"
+              },
+              {
+                "id": 12,
+                "icon": "warehouse",
+                "image": "/security/guard9.jpg",
+                "title": "Construction Sites",
+                "description": "Construction Projects, Infrastructure Sites, Development Areas"
+              }
+            ],
+            "carousel": {
+              "hasArrows": true,
+              "hasDots": true,
+              "activeDot": 1,
+              "totalDots": 5,
+              "gap": 16
+            }
+          }
+        }
+      },
+      "Stats": {
+        "variants": {
+          "SecurityStats1": {
+            "badge": "OUR IMPACT",
+            "title": {
+              "normal": "Numbers That Reflect",
+              "highlighted": "Our Commitment"
+            },
+            "desc": "Our journey is built on trust, discipline and consistent service excellence, ensuring safety for people, properties and businesses.",
+            "bgImage": "/security/guard1.jpg",
+            "stats": [
+              {
+                "id": 1,
+                "icon": "users",
+                "number": 500,
+                "suffix": "+",
+                "label": "Trained Security Guards"
+              },
+              {
+                "id": 2,
+                "icon": "building",
+                "number": 200,
+                "suffix": "+",
+                "label": "Satisfied Clients"
+              },
+              {
+                "id": 3,
+                "icon": "map-pin",
+                "number": 50,
+                "suffix": "+",
+                "label": "Locations Covered"
+              },
+              {
+                "id": 4,
+                "icon": "shield-check",
+                "number": 10,
+                "suffix": "+",
+                "label": "Years Experience"
+              }
+            ]
+          }
+        }
+      },
+      "Testimonial": {
+        "variants": {
+          "SecurityTestimonial1": {
+            "badge": "TESTIMONIALS",
+            "title": {
+              "normal": "What Our",
+              "highlighted": "Clients Say"
+            },
+            "desc": "Trusted by businesses, institutions and homeowners for our reliable and professional security guard services.",
+            "testimonialItems": [
+              {
+                "id": 1,
+                "name": "Amit Sharma",
+                "designation": "Facility Manager,",
+                "company": "Sharma Group, Noida",
+                "companyIcon": "building",
+                "image": "/security/guard8.jpg",
+                "rating": 5,
+                "quote": "Safeguard Security has been providing security guards at our office premises for over 2 years. Their team is highly professional, well-trained and very reliable. The guards are disciplined, punctual and always maintain a polite and helpful attitude. We are extremely satisfied with their service and highly recommend them."
+              },
+              {
+                "id": 2,
+                "name": "Priya Verma",
+                "designation": "HR Manager,",
+                "company": "Verma Industries, Gurgaon",
+                "companyIcon": "building",
+                "image": "/security/guard9.jpg",
+                "rating": 5,
+                "quote": "We have been very happy with the security services provided by Safeguard Security. Their guards are professional, attentive and well-trained. The team is responsive to our requirements and maintains excellent discipline across our premises. We highly appreciate their service and support."
+              },
+              {
+                "id": 3,
+                "name": "Rajiv Mehta",
+                "designation": "Operations Head,",
+                "company": "Mehta Business Park, Delhi",
+                "companyIcon": "building",
+                "image": "/security/guard10.jpg",
+                "rating": 5,
+                "quote": "Safeguard Security has helped us maintain a safe and secure environment for our employees and visitors. Their security personnel are punctual, responsible and well-mannered. The management team is also very cooperative and quick to respond whenever we need assistance."
+              }
+            ],
+            "carousel": {
+              "hasArrows": true,
+              "hasDots": true,
+              "activeDot": 1,
+              "totalDots": 3
+            }
+          }
+        }
+      },
+      "Cta": {
+        "variants": {
+          "SecurityCta1": {
+            "badge": "GET PROFESSIONAL SECURITY TODAY",
+            "title": {
+              "normal": "Your Safety",
+              "highlighted": "Is Our Priority"
+            },
+            "desc": "Trusted security guards, customized security solutions and 24/7 support to keep your people, property and business safe.",
+            "bgImage": "/security/guard9.jpg",
+            "image": "/cta.png",
+            "button": {
+              "label": "Contact Us Now",
+              "href": "/contact",
+              "icon": "arrow-right"
+            }
+          }
+        }
+      },
+      "Footer": {
+        "variants": {
+          "SecurityFooter1": {
+            "bgImage": "/security/guard1.jpg",
+            "logoImage": "/logo2.png",
+            "logoAlt": "Safeguard Security Services",
+            "siteName": "SAFEGUARD",
+            "tagline": "SECURITY SERVICES",
+            "desc": "Safeguard Security Services provides reliable, professional and trained security guards to protect your people, property and business. Your safety is our priority.",
+            "socialLinks": [
+              {
+                "label": "facebook",
+                "href": "https://www.facebook.com/"
+              },
+              {
+                "label": "instagram",
+                "href": "https://www.instagram.com/"
+              },
+              {
+                "label": "linkedin",
+                "href": "https://www.linkedin.com/"
+              },
+              {
+                "label": "youtube",
+                "href": "https://www.youtube.com/"
+              }
+            ],
+            "columns": [
+              {
+                "title": "Quick Links",
+                "links": [
+                  {
+                    "label": "Home",
+                    "href": "/"
+                  },
+                  {
+                    "label": "About Us",
+                    "href": "/about"
+                  },
+                  {
+                    "label": "Our Services",
+                    "href": "/services"
+                  },
+                  {
+                    "label": "Industries We Serve",
+                    "href": "/industries"
+                  },
+                  {
+                    "label": "Our Team",
+                    "href": "/team"
+                  },
+                  {
+                    "label": "Gallery",
+                    "href": "/gallery"
+                  },
+                  {
+                    "label": "Contact Us",
+                    "href": "/contact"
+                  }
+                ]
+              },
+              {
+                "title": "Our Services",
+                "links": [
+                  {
+                    "label": "Security Guard Services",
+                    "href": "/services/manned-security-guards"
+                  },
+                  {
+                    "label": "Residential Security",
+                    "href": "/services/gate-entry-security"
+                  },
+                  {
+                    "label": "Commercial Security",
+                    "href": "/services/commercial-industrial-security"
+                  },
+                  {
+                    "label": "Industrial Security",
+                    "href": "/services/commercial-industrial-security"
+                  },
+                  {
+                    "label": "Event Security",
+                    "href": "/services/event-vip-security"
+                  },
+                  {
+                    "label": "Personal Security",
+                    "href": "/services/event-vip-security"
+                  },
+                  {
+                    "label": "24/7 Security Support",
+                    "href": "/services/security-monitoring"
+                  }
+                ]
+              }
+            ],
+            "footerContact": {
+              "title": "Contact Information",
+              "items": [
+                {
+                  "icon": "map-pin",
+                  "lines": [
+                    {
+                      "text": "123 Security Street,"
+                    },
+                    {
+                      "text": "New Delhi, India"
+                    }
+                  ]
+                },
+                {
+                  "icon": "phone",
+                  "lines": [
+                    {
+                      "text": "+91 1234567890",
+                      "href": "tel:+911234567890"
+                    }
+                  ]
+                },
+                {
+                  "icon": "mail",
+                  "lines": [
+                    {
+                      "text": "info@safeguardsecurity.com",
+                      "href": "mailto:info@safeguardsecurity.com"
+                    }
+                  ]
+                },
+                {
+                  "icon": "clock",
+                  "lines": [
+                    {
+                      "text": "Mon - Sat: 9:00 AM - 6:00 PM"
+                    },
+                    {
+                      "text": "Sunday: Closed"
+                    }
+                  ]
+                }
+              ]
+            },
+            "copyright": {
+              "prefix": "© 2026",
+              "brand": "Safeguard Security Services",
+              "suffix": ". All Rights Reserved."
+            },
+            "backToTop": true,
+            "backToTopLabel": "Back to top"
+          }
+        }
+      },
+      "Mission": {
+        "variants": {
+          "SecurityMission1": {
+            "badge": "OUR MISSION & VISION",
+            "title": {
+              "normal": "Our Commitment to a",
+              "highlighted": "Safer Tomorrow"
+            },
+            "desc": "At Safeguard Security Services, our mission, vision and goals reflect our dedication to creating safer environments for people, property and businesses through reliable security solutions and professional service.",
+            "image": "/security/guard5.jpg",
+            "items": [
+              {
+                "id": 1,
+                "title": "Our Mission",
+                "description": "To provide cutting-edge security solutions that ensure the safety, reliability and peace of mind of our clients. We are committed to innovation, excellence and building trust through professional and proactive security services.",
+                "icon": "target"
+              },
+              {
+                "id": 2,
+                "title": "Our Vision",
+                "description": "To be a leading and most trusted security service provider, recognized for our integrity, technology-driven solutions and unwavering commitment to creating safer communities, workplaces and public spaces.",
+                "icon": "eye"
+              }
+            ]
+          }
+        }
+      },
+      "WhyChooseUs": {
+        "variants": {
+          "SecurityWhyChooseUs1": {
+            "badge": "WHY CHOOSE US",
+            "title": {
+              "normal": "Your Safety,",
+              "highlighted": "Our Commitment"
+            },
+            "desc": "We provide professional, reliable and customized security solutions to keep your people, property and business safe at all times.",
+            "items": [
+              {
+                "id": 1,
+                "title": "Trained & Professional Staff",
+                "description": "Our security guards are well-trained, verified and equipped to handle any situation with professionalism.",
+                "icon": "shield-check"
+              },
+              {
+                "id": 2,
+                "title": "Customized Security Solutions",
+                "description": "We offer tailored security plans designed to meet the specific needs of your home, office, industry or event.",
+                "icon": "cctv"
+              },
+              {
+                "id": 3,
+                "title": "24/7 Monitoring & Support",
+                "description": "Our team is available round the clock to ensure continuous protection and quick response to any security concern.",
+                "icon": "shield"
+              },
+              {
+                "id": 4,
+                "title": "Trusted by Clients",
+                "description": "We are proud to be a preferred security partner for residential, commercial and industrial clients.",
+                "icon": "users"
+              },
+              {
+                "id": 5,
+                "title": "Advanced Technology",
+                "description": "We use modern security tools and monitoring systems to deliver more effective and reliable protection.",
+                "icon": "settings"
+              },
+              {
+                "id": 6,
+                "title": "Commitment to Safety",
+                "description": "Your safety is our top priority. We consistently strive for excellence in service, integrity and reliability.",
+                "icon": "handshake"
+              }
+            ]
+          }
+        }
+      },
+      "Team": {
+        "variants": {
+          "SecurityTeam1": {
+            "banner": {
+              "title": "Our Team",
+              "image": "/security/guard1.jpg",
+              "items": [
+                {
+                  "label": "Home",
+                  "href": "/"
+                },
+                {
+                  "label": "Our Team"
+                }
+              ]
+            },
+            "heading": {
+              "badge": "OUR TEAM",
+              "title": "Meet Our Security Professionals"
+            },
+            "members": [
+              {
+                "id": 1,
+                "slug": "arvind-sharma",
+                "name": "Arvind Sharma",
+                "position": "Chief Security Officer",
+                "image": "/people/man1.png"
+              },
+              {
+                "id": 2,
+                "slug": "priya-singh",
+                "name": "Priya Singh",
+                "position": "Operations Manager",
+                "image": "/people/women1.png"
+              },
+              {
+                "id": 3,
+                "slug": "rakesh-kumar",
+                "name": "Rakesh Kumar",
+                "position": "Security Supervisor",
+                "image": "/people/men2.png"
+              },
+              {
+                "id": 4,
+                "slug": "ananya-sharma",
+                "name": "Ananya Sharma",
+                "position": "Training Coordinator",
+                "image": "/people/women2.png"
+              },
+              {
+                "id": 5,
+                "slug": "vikram-yadav",
+                "name": "Vikram Yadav",
+                "position": "Team Leader",
+                "image": "/people/men3.png"
+              },
+              {
+                "id": 6,
+                "slug": "meena-rawat",
+                "name": "Meena Rawat",
+                "position": "Control Room Operator",
+                "image": "/people/women5.png"
+              },
+              {
+                "id": 7,
+                "slug": "suresh-verma",
+                "name": "Suresh Verma",
+                "position": "Mobile Patrol Officer",
+                "image": "/people/men4.png"
+              },
+              {
+                "id": 8,
+                "slug": "deepika-mishra",
+                "name": "Deepika Mishra",
+                "position": "Client Relations Executive",
+                "image": "/people/women4.png"
+              }
+            ]
+          }
+        }
+      },
+      "Gallery": {
+        "variants": {
+          "SecurityGallery1": {
+            "banner": {
+              "title": "Gallery",
+              "image": "/security/guard8.jpg",
+              "items": [
+                {
+                  "label": "Home",
+                  "href": "/"
+                },
+                {
+                  "label": "Gallery"
+                }
+              ]
+            },
+            "heading": {
+              "badge": "OUR GALLERY",
+              "title": "Our Security Gallery"
+            },
+            "visibleCount": 8,
+            "images": [
+              {
+                "id": 1,
+                "title": "Guard Team On Duty",
+                "image": "/security/guard1.jpg"
+              },
+              {
+                "id": 2,
+                "title": "Corporate Gate Security",
+                "image": "/security/guard2.jpg"
+              },
+              {
+                "id": 3,
+                "title": "Patrol Team Assembly",
+                "image": "/security/guard3.jpg"
+              },
+              {
+                "id": 4,
+                "title": "Residential Society Security",
+                "image": "/security/guard4.jpg"
+              },
+              {
+                "id": 5,
+                "title": "Professional Guard In Uniform",
+                "image": "/security/guard5.jpg"
+              },
+              {
+                "id": 6,
+                "title": "Access Control Duty",
+                "image": "/security/guard6.jpg"
+              },
+              {
+                "id": 7,
+                "title": "Site Security Patrol",
+                "image": "/security/guard7.jpg"
+              },
+              {
+                "id": 8,
+                "title": "Event Security Cover",
+                "image": "/security/guard8.jpg"
+              },
+              {
+                "id": 9,
+                "title": "Security Briefing Session",
+                "image": "/security/guard9.jpg"
+              },
+              {
+                "id": 10,
+                "title": "Industrial Premises Security",
+                "image": "/security/guard10.jpg"
+              },
+              {
+                "id": 11,
+                "title": "24/7 Monitoring Support",
+                "image": "/security/guard11.jpg"
+              },
+              {
+                "id": 12,
+                "title": "Trusted Protection Promise",
+                "image": "/cta.png"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

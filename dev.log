@@ -1,0 +1,19 @@
+
+> my-app@0.1.0 dev
+> next dev
+
+▲ Next.js 16.4.0 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.243:3000
+✓ Ready in 1881ms
+✓ Running next.config.ts took 102ms
+⨯ Another next dev server is already running.
+
+- Local:        http://localhost:3001
+- PID:          3508
+- Dir:          C:\Users\Admin\Desktop\SecurityGuard\my-app
+- Log:          .next\dev\logs\next-development.log
+
+You can access the existing server at http://localhost:3001,
+or run taskkill /PID 3508 /F to stop it and start a new one.
+[?25h
