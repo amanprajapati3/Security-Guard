@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
         {/* Header Section */}
         <ScrollReveal as="div" direction="up" className="max-w-3xl">
           <SectionLabel text={w.badge} />
-          <h2 className="mt-1 text-3xl font-bold leading-tight text-[#06194a] sm:text-4xl lg:text-[42px]">
+          <h2 className="mt-1 text-3xl font-bold leading-tight text-[#06194a] sm:text-4xl">
             {w.title.normal} <span className="text-[#0a3a9c]">{w.title.highlighted}</span>
           </h2>
           <p className="mt-1 text-base leading-relaxed text-slate-600">
