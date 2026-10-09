@@ -132,11 +132,11 @@ export default function SecurityBanner() {
                         <Link
                           key={btn.label}
                           href={btn.href}
-                          className="inline-flex items-center gap-3 rounded-full bg-[#fdb913] py-3.5 px-8 text-sm font-bold text-[#06194a] shadow-lg transition-all duration-300 hover:bg-white sm:text-base"
+                          className="btn-fill-tr [--btn-fill:#06194a] [--btn-hover:#fdb913] inline-flex items-center gap-3 rounded-full bg-[#fdb913] py-3.5 px-8 text-sm font-bold text-[#06194a] shadow-lg sm:text-base"
                         >
                           {btn.label}
 
-                          <span className="flex items-center justify-center rounded-full text-[#06194a]">
+                          <span className="flex items-center justify-center rounded-full">
                             <LuArrowRight size={26} />
                           </span>
                         </Link>
@@ -144,7 +144,7 @@ export default function SecurityBanner() {
                         <Link
                           key={btn.label}
                           href={btn.href}
-                          className="inline-flex items-center rounded-full border px-7 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:bg-white hover:text-[#06194a] sm:text-base"
+                          className="btn-fill-tl [--btn-fill:#ffffff] [--btn-hover:#06194a] inline-flex items-center rounded-full border px-7 py-3.5 text-sm font-bold text-white sm:text-base"
                         >
                           {btn.label}
                         </Link>

@@ -101,6 +101,7 @@ export default function SecurityHeader() {
                 width={190}
                 height={56}
                 priority
+                loading="eager"
                 className="h-14 w-auto sm:h-16 lg:h-20"
               />
             </Link>
@@ -156,7 +157,7 @@ export default function SecurityHeader() {
             <div className="flex items-center gap-3">
               <Link
                 href={button.href}
-                className="hidden items-center gap-2 rounded-full bg-[#fdb913] px-5 py-2.5 text-sm lg:text-lg font-semibold text-[#06194a] shadow-md transition-all duration-300 hover:bg-white sm:inline-flex"
+                className="btn-fill-tr [--btn-fill:#06194a] [--btn-hover:#fdb913] hidden items-center gap-2 rounded-full bg-[#fdb913] px-5 py-2.5 text-sm lg:text-lg font-semibold text-[#06194a] shadow-md sm:inline-flex"
               >
                 {button.label}
                 <ArrowRight size={16} />
@@ -203,6 +204,7 @@ export default function SecurityHeader() {
               alt={header.site.logo.alt}
               width={160}
               height={48}
+              loading="eager"
               className="h-11 w-auto"
             />
             <button
@@ -284,7 +286,7 @@ export default function SecurityHeader() {
           <div className="space-y-4 border-t border-white/10 px-5 py-5">
             <Link
               href={button.href}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-[#fdb913] px-5 py-3 text-sm font-semibold text-[#06194a] transition-colors hover:bg-white"
+              className="btn-fill-tl [--btn-fill:#06194a] [--btn-hover:#fdb913] flex w-full items-center justify-center gap-2 rounded-full bg-[#fdb913] px-5 py-3 text-sm font-semibold text-[#06194a]"
             >
               {button.label}
               <ArrowRight size={16} />

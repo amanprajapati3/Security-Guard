@@ -213,7 +213,7 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-between gap-4 rounded-full bg-[#fdb913] px-7 py-3.5 text-sm font-bold text-[#06194a] shadow-md transition-transform duration-300 hover:scale-[1.02]"
+                    className="btn-fill-tl [--btn-fill:#06194a] [--btn-hover:#fdb913] inline-flex items-center justify-between gap-4 rounded-full bg-[#fdb913] px-7 py-3.5 text-sm font-bold text-[#06194a] shadow-md hover:scale-[1.02]"
                   >
                     <span>Send Message</span>
                     <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#06194a] text-[#fdb913]">

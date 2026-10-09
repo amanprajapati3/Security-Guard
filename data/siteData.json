@@ -339,7 +339,7 @@
           "SecurityAbout1": {
             "banner": {
               "title": "About Us",
-              "image": "/security/guard2.jpg",
+              "image": "/security/guard1.jpg",
               "items": [
                 {
                   "label": "Home",
@@ -411,7 +411,7 @@
           "SecurityServices1": {
             "banner": {
               "title": "Our Services",
-              "image": "/security/guard3.jpg",
+              "image": "/security/guard1.jpg",
               "items": [
                 {
                   "label": "Home",
@@ -424,7 +424,7 @@
             },
             "detailBanner": {
               "title": "Service Detail",
-              "image": "/security/guard3.jpg",
+              "image": "/security/guard1.jpg",
               "items": [
                 {
                   "label": "Home",
@@ -1465,7 +1465,7 @@
           "SecurityGallery1": {
             "banner": {
               "title": "Gallery",
-              "image": "/security/guard8.jpg",
+              "image": "/security/guard1.jpg",
               "items": [
                 {
                   "label": "Home",
@@ -1551,7 +1551,7 @@
           "SecurityFAQ1": {
             "banner": {
               "title": "Faq",
-              "image": "/security/guard8.jpg",
+              "image": "/security/guard1.jpg",
               "items": [
                 {
                   "label": "Home",
@@ -1619,7 +1619,7 @@
           "SecurityContact1": {
             "banner": {
               "title": "Contact Us",
-              "image": "/security/guard8.jpg",
+              "image": "/security/guard1.jpg",
               "items": [
                 {
                   "label": "Home",

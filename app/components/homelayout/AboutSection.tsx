@@ -173,11 +173,11 @@ export default function SecurityAbout({ hideButton = false }: { hideButton?: boo
           {!hideButton && (
             <Link
               href={a.button.href}
-              className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#fdb913] py-2 pl-6 pr-2 text-base font-bold text-[#06194a] shadow-md transition-all duration-300 hover:bg-[#06194a] hover:text-white"
+              className="btn-fill-tl [--btn-fill:#06194a] [--btn-hover:#fdb913] mt-8 inline-flex items-center gap-3 rounded-full bg-[#fdb913] py-2 pl-6 pr-2 text-base font-bold text-[#06194a] shadow-md"
             >
               {a.button.label}
 
-              <span className="flex items-center justify-center rounded-full text-[#06194a]">
+              <span className="flex items-center justify-center rounded-full">
                 <LuArrowRight size={26} />
               </span>
             </Link>

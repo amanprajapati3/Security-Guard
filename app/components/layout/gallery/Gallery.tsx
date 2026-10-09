@@ -148,7 +148,7 @@ export default function Gallery() {
             <button
               type="button"
               onClick={() => setShowAll(false)}
-              className="inline-flex cursor-pointer items-center gap-3 rounded-full border-2 border-[#06194a] py-2 pl-6 pr-2 text-sm font-bold text-[#06194a] transition-all duration-300 hover:bg-[#06194a] hover:text-white sm:text-base"
+              className="btn-fill-tl [--btn-fill:#06194a] [--btn-hover:#ffffff] inline-flex cursor-pointer items-center gap-3 rounded-full border-2 border-[#06194a] py-2 pl-6 pr-2 text-sm font-bold text-[#06194a] sm:text-base"
             >
               Show Less
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#06194a] text-white transition-colors">
@@ -159,7 +159,7 @@ export default function Gallery() {
             <button
               type="button"
               onClick={() => setShowAll(true)}
-              className="inline-flex cursor-pointer items-center gap-3 rounded-full bg-[#fdb913] py-2 pl-6 pr-2 text-sm font-bold text-[#06194a] shadow-lg transition-all duration-300 hover:bg-white sm:text-base"
+              className="btn-fill-tr [--btn-fill:#06194a] [--btn-hover:#fdb913] inline-flex cursor-pointer items-center gap-3 rounded-full bg-[#fdb913] py-2 pl-6 pr-2 text-sm font-bold text-[#06194a] shadow-lg sm:text-base"
             >
               Load More
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#06194a] text-white">

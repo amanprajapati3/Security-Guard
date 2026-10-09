@@ -113,7 +113,7 @@ export default function SecurityIndustries() {
             ))}
           </ul>
 
-          <Link href={d.button.href} className="mt-7 inline-flex items-center gap-3 rounded-full bg-[#fdb913] py-2 pl-6 pr-2 text-sm font-bold text-[#06194a] shadow-lg transition-all duration-300 hover:bg-white">
+          <Link href={d.button.href} className="btn-fill-tl [--btn-fill:#06194a] [--btn-hover:#fdb913] mt-7 inline-flex items-center gap-3 rounded-full bg-[#fdb913] py-2 pl-6 pr-2 text-sm font-bold text-[#06194a] shadow-lg">
             {d.button.label}
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#06194a] text-white">
               <LuArrowRight size={16} />
