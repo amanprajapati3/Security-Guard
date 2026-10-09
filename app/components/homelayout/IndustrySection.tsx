@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { LuArrowLeft, LuArrowRight, LuBuilding2, LuCalendar, LuCheck, LuFactory, LuHotel, LuHouse, LuLandmark, LuPlane, LuSchool, LuShoppingBag, LuStethoscope, LuTruck, LuWarehouse } from "react-icons/lu";
 import type { IconType } from "react-icons";
 import { getIndustries, site } from "@/data";
+import ScrollReveal from "../shared/ScrollReveal";
 
 const iconMap: Record<string, IconType> = { check: LuCheck, building: LuBuilding2, home: LuHouse, factory: LuFactory, hospital: LuStethoscope, school: LuSchool, "shopping-bag": LuShoppingBag, hotel: LuHotel, landmark: LuLandmark, truck: LuTruck, calendar: LuCalendar, plane: LuPlane, warehouse: LuWarehouse };
 
@@ -74,6 +75,7 @@ export default function SecurityIndustries() {
   const atEnd = currentPage === totalPages - 1;
 
   return (
+    <ScrollReveal direction="none" duration={0.6}>
     <section className="relative isolate overflow-hidden bg-[#06194a] py-16 sm:py-20 lg:bg-white lg:py-24">
       {/* Mobile + tablet background (< lg) */}
       <div aria-hidden className="pointer-events-none absolute inset-0 z-0 lg:hidden">
@@ -91,7 +93,7 @@ export default function SecurityIndustries() {
       {/* Content */}
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[340px_minmax(0,1fr)] lg:gap-12 lg:px-8">
         {/* Left content */}
-        <div className="text-center lg:text-left">
+        <ScrollReveal as="div" direction="right" mobileDirection="up" className="text-center lg:text-left">
           <SectionLabel text={d.badge} tone="yellow" center />
           <h2 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-left lg:text-[38px]">
             {d.title.normal}
@@ -101,13 +103,13 @@ export default function SecurityIndustries() {
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white lg:mx-0">{d.desc}</p>
 
           <ul className="mx-auto mt-5 w-fit space-y-2.5 text-left text-white lg:mx-0">
-            {d.features.map((f) => (
-              <li key={f.id} className="flex items-center gap-3 text-sm font-medium">
+            {d.features.map((f, i) => (
+              <ScrollReveal as="li" key={f.id} index={i} staggerChildren={0.08} className="flex items-center gap-3 text-sm font-medium">
                 <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#fdb913] text-[#06194a]">
                   <Icon name="check" size={12} strokeWidth={3.5} />
                 </span>
                 {f.title}
-              </li>
+              </ScrollReveal>
             ))}
           </ul>
 
@@ -117,13 +119,13 @@ export default function SecurityIndustries() {
               <LuArrowRight size={16} />
             </span>
           </Link>
-        </div>
+        </ScrollReveal>
 
         {/* Cards */}
         <div className="min-w-0">
           <div ref={track} onScroll={updatePage} className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {items.map((it, i) => (
-              <article key={it.id} className="group w-full shrink-0 snap-start overflow-hidden rounded-xl bg-white text-[#06194a] shadow-xl sm:w-[calc((100%-16px)/2)] md:w-[calc((100%-32px)/3)] lg:w-[calc((100%-48px)/4)]">
+              <ScrollReveal as="article" key={it.id} index={i} staggerChildren={0.08} className="group w-full shrink-0 snap-start overflow-hidden rounded-xl bg-white text-[#06194a] shadow-xl sm:w-[calc((100%-16px)/2)] md:w-[calc((100%-32px)/3)] lg:w-[calc((100%-48px)/4)]">
                 <div className="relative h-44 overflow-hidden sm:h-52 lg:h-48">
                   <Image src={it.image} alt={it.title} fill sizes="(max-width: 639px) 90vw, (max-width: 767px) 45vw, (max-width: 1023px) 30vw, 20vw" className="object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
@@ -134,7 +136,7 @@ export default function SecurityIndustries() {
                   <h3 className="mr-10 mt-2 text-[17px] font-bold leading-snug">{it.title}</h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-slate-500">{it.description}</p>
                 </div>
-              </article>
+              </ScrollReveal>
             ))}
           </div>
 
@@ -160,5 +162,6 @@ export default function SecurityIndustries() {
         </div>
       </div>
     </section>
+    </ScrollReveal>
   );
 }

@@ -12,6 +12,7 @@ import {
 } from "react-icons/lu";
 import type { IconType } from "react-icons";
 import { getHomeServices, site } from "@/data";
+import ScrollReveal from "../shared/ScrollReveal";
 
 /* Maps the icon strings used in siteData.json to react-icons */
 const iconMap: Record<string, IconType> = {
@@ -73,6 +74,7 @@ export default function SecurityServices() {
   const services = getHomeServices();
 
   return (
+    <ScrollReveal direction="none" duration={0.6}>
     <section className="relative overflow-hidden bg-white py-8 md:py-12">
       <DotPattern className="left-4 top-10 hidden h-28 w-28 sm:block" />
       <DotPattern className="right-6 top-28 hidden h-24 w-32 lg:block" />
@@ -85,22 +87,26 @@ export default function SecurityServices() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <div className="mx-auto max-w-4xl text-center">
+        <ScrollReveal as="div" direction="up" className="mx-auto max-w-4xl text-center">
           <SectionLabel text={s.badge} center />
           <h2 className="mt-3 text-3xl font-bold leading-tight text-[#06194a] sm:text-4xl lg:text-[49px]">
             {s.title.normal} <span className="text-[#fdb913]">{s.title.highlighted}</span>
             <span className="block">{s.title.postTitle}</span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">{s.desc}</p>
-        </div>
+        </ScrollReveal>
 
         {/* Cards */}
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((item, i) => {
             const yellow = i % 2 === 1;
             return (
-              <article
+              <ScrollReveal
+                as="article"
                 key={item.id}
+                direction="none"
+                index={i}
+                staggerChildren={0.1}
                 className="group overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(10,47,143,0.12)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_16px_40px_rgba(10,47,143,0.2)]"
               >
                 <div className="relative h-44 overflow-hidden sm:h-48">
@@ -133,11 +139,12 @@ export default function SecurityServices() {
                     </span>
                   </Link>
                 </div>
-              </article>
+              </ScrollReveal>
             );
           })}
         </div>
       </div>
     </section>
+    </ScrollReveal>
   );
 }

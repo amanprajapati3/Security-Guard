@@ -59,6 +59,7 @@ export type SecurityAboutBannerItem = SecurityAboutBanner["items"][number];
 export type SecurityServiceItem = SecurityServicesData["services"][number];
 export type SecurityServicesBanner = SecurityServicesData["banner"];
 export type SecurityServicesBannerItem = SecurityServicesBanner["items"][number];
+export type SecurityServiceDetail = SecurityServicesData["details"][number];
 
 /* Industries */
 export type SecurityIndustryItem = SecurityIndustriesData["items"][number];
@@ -88,8 +89,14 @@ export type SecurityWhyChooseUsData = typeof sec.WhyChooseUs.variants.SecurityWh
 export type SecurityWhyChooseUsItem = SecurityWhyChooseUsData["items"][number];
 export type SecurityTeamData = typeof sec.Team.variants.SecurityTeam1;
 export type SecurityTeamMember = SecurityTeamData["members"][number];
+export type SecurityTeamMemberDetail = SecurityTeamData["details"][number];
 export type SecurityGalleryData = typeof sec.Gallery.variants.SecurityGallery1;
 export type SecurityGalleryImage = SecurityGalleryData["images"][number];
+export type SecurityFAQData = typeof sec.FAQ.variants.SecurityFAQ1;
+export type SecurityFAQItem = SecurityFAQData["items"][number];
+export type SecurityContactData = typeof sec.Contact.variants.SecurityContact1;
+export type SecurityContactInfoCard = SecurityContactData["infoCards"][number];
+export type SecurityContactSocialLink = SecurityContactData["socialLinks"][number];
 /* Site object                                                         */
 
 export const site = {
@@ -107,11 +114,13 @@ export const site = {
   whyChooseUs: sec.WhyChooseUs.variants.SecurityWhyChooseUs1,
   team: sec.Team.variants.SecurityTeam1,
   gallery: sec.Gallery.variants.SecurityGallery1,
+  faq: sec.FAQ.variants.SecurityFAQ1,
+  contact: sec.Contact.variants.SecurityContact1,
 };
 
 /* Slug helper                                                         */
 
-function normalizeSlug(slug: string, collection: "services"): string {
+function normalizeSlug(slug: string, collection: "services" | "team"): string {
   const segments = slug
     .split("/")
     .map((segment) => segment.trim())
@@ -131,9 +140,19 @@ export function getBannerSlides(): SecurityBannerSlide[] {
 
 const serviceItems = sec.Services.variants.SecurityServices1
   .services as SecurityServiceItem[];
+const serviceDetails = sec.Services.variants.SecurityServices1.details;
 
 export function getServices(): SecurityServiceItem[] {
   return serviceItems;
+}
+// faq
+export function getFAQData(): SecurityFAQData {
+  return sec.FAQ.variants.SecurityFAQ1;
+}
+
+// contact 
+export function getContactData(): SecurityContactData {
+  return sec.Contact.variants.SecurityContact1;
 }
 
 /** First N services, used by the home page grid (`homeVisibleCount`). */
@@ -151,6 +170,15 @@ export function getServiceBySlug(slug: string): SecurityServiceItem | null {
 
 export function getServiceSlugs(): SecurityServiceItem[] {
   return serviceItems;
+}
+
+export function getServiceDetails(): SecurityServiceDetail[] {
+  return serviceDetails;
+}
+
+export function getServiceDetailBySlug(slug: string): SecurityServiceDetail | null {
+  const cleanSlug = normalizeSlug(slug, "services");
+  return serviceDetails.find((detail) => detail.slug === cleanSlug) || null;
 }
 
 /* Industries helpers                                                  */
@@ -204,13 +232,26 @@ export function getWhyChooseUsData(): SecurityWhyChooseUsData {
 
 const teamMembers = sec.Team.variants.SecurityTeam1
   .members as SecurityTeamMember[];
+const teamMemberDetails = sec.Team.variants.SecurityTeam1.details;
 
 export function getTeamMembers(): SecurityTeamMember[] {
   return teamMembers;
 }
 
 export function getTeamMemberBySlug(slug: string): SecurityTeamMember | null {
-  return teamMembers.find((member) => member.slug === slug) || null;
+  const cleanSlug = normalizeSlug(slug, "team");
+  return teamMembers.find((member) => member.slug === cleanSlug) || null;
+}
+
+export function getTeamMemberDetails(): SecurityTeamMemberDetail[] {
+  return teamMemberDetails;
+}
+
+export function getTeamMemberDetailBySlug(
+  slug: string,
+): SecurityTeamMemberDetail | null {
+  const cleanSlug = normalizeSlug(slug, "team");
+  return teamMemberDetails.find((detail) => detail.slug === cleanSlug) || null;
 }
 
 /* Gallery helpers                                                     */

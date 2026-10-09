@@ -422,6 +422,20 @@
                 }
               ]
             },
+            "detailBanner": {
+              "title": "Service Detail",
+              "image": "/security/guard3.jpg",
+              "items": [
+                {
+                  "label": "Home",
+                  "href": "/"
+                },
+                {
+                  "label": "Service Detail",
+                  "href": "/services"
+                }
+              ]
+            },
             "badge": "SERVICES",
             "title": {
               "normal": "Professional",
@@ -502,6 +516,236 @@
                   "label": "Discover More",
                   "href": "/services/commercial-industrial-security"
                 }
+              }
+            ],
+            "details": [
+              {
+                "slug": "manned-security-guards",
+                "title": {
+                  "normal": "Manned Security",
+                  "highlighted": "Guard Services"
+                },
+                "description": "Our professional manned security guards provide a visible, reassuring presence and dependable protection for your people, property and daily operations.",
+                "heroImage": "/security/guard5.jpg",
+                "heroImageAlt": "Professional security guard providing on-site protection",
+                "benefits": [
+                  { "icon": "shield", "label": "Visible Deterrence" },
+                  { "icon": "user-check", "label": "Vetted Guards" },
+                  { "icon": "clipboard", "label": "Site Procedures" },
+                  { "icon": "clock", "label": "Reliable Coverage" }
+                ],
+                "overviewImage": "/security/guard11.jpg",
+                "overviewImageAlt": "Security professional monitoring a protected premises",
+                "overviewTitle": "Professional On-Site Protection",
+                "overviewDescription": "Every site has different risks and routines. We match trained security personnel to your requirements, brief them on your procedures and provide dependable supervision throughout the assignment.",
+                "overviewPoints": [
+                  "Uniformed guards create a visible security presence",
+                  "Access checks for visitors, staff and contractors",
+                  "Regular patrols and clear incident reporting",
+                  "Professional support for reception and front-of-house",
+                  "Coverage planned around your operating hours",
+                  "Suitable for homes, offices, retail and industrial sites"
+                ],
+                "featuresTitle": "Key Features",
+                "featuresDescription": "A dependable guarding service tailored to the needs of your premises.",
+                "features": [
+                  { "icon": "user-check", "title": "Trained Personnel", "description": "Professional guards briefed for your site and responsibilities." },
+                  { "icon": "shield", "title": "Visible Deterrence", "description": "A reassuring on-site presence that helps discourage unwanted activity." },
+                  { "icon": "door", "title": "Access Control", "description": "Visitor and contractor checks managed with care and consistency." },
+                  { "icon": "clipboard", "title": "Clear Reporting", "description": "Accurate shift records and incident reports keep you informed." },
+                  { "icon": "radio", "title": "Active Patrols", "description": "Regular checks of key areas help identify concerns early." },
+                  { "icon": "clock", "title": "Flexible Coverage", "description": "Scheduling aligned with your hours, site and security needs." }
+                ]
+              },
+              {
+                "slug": "security-monitoring",
+                "title": {
+                  "normal": "24/7 Security",
+                  "highlighted": "Monitoring Service"
+                },
+                "description": "Our 24/7 security monitoring service ensures round-the-clock surveillance of your property with real-time alerts, expert monitoring and quick response to suspicious activity.",
+                "heroImage": "/security/guard6.jpg",
+                "heroImageAlt": "Security operator monitoring live camera feeds",
+                "benefits": [
+                  { "icon": "shield", "label": "Real-Time Monitoring" },
+                  { "icon": "bell", "label": "Instant Alerts" },
+                  { "icon": "users", "label": "Professional Team" },
+                  { "icon": "headphones", "label": "24/7 Support" }
+                ],
+                "overviewImage": "/security/guard7.jpg",
+                "overviewImageAlt": "Security camera protecting a residential property",
+                "overviewTitle": "Service Overview",
+                "overviewDescription": "Our 24/7 security monitoring service uses advanced CCTV and professional monitoring teams to watch your property continuously. We detect unusual activity, send instant alerts and take quick action to prevent incidents. Whether it’s a home, office, shop, warehouse or industrial facility, our monitoring solutions provide complete peace of mind.",
+                "overviewPoints": [
+                  "Continuous live monitoring of your premises",
+                  "Instant alerts on suspicious activity",
+                  "Trained security professionals",
+                  "Remote access and real-time notifications",
+                  "Quick response to emergencies",
+                  "Suitable for residential, commercial and industrial properties"
+                ],
+                "featuresTitle": "Key Features",
+                "featuresDescription": "Our 24/7 monitoring service is designed to deliver maximum security and reliability with the latest technology.",
+                "features": [
+                  { "icon": "cctv", "title": "Live Video Monitoring", "description": "Real-time surveillance of your property 24/7." },
+                  { "icon": "bell", "title": "Instant Alerts", "description": "Immediate notifications on suspicious activity." },
+                  { "icon": "headphones", "title": "Dedicated Monitoring Team", "description": "Trained professionals watching round the clock." },
+                  { "icon": "smartphone", "title": "Remote Access", "description": "View live footage anytime from your mobile or PC." },
+                  { "icon": "settings", "title": "Quick Response", "description": "Immediate action in case of emergencies." },
+                  { "icon": "shield-check", "title": "Reliable & Secure", "description": "Advanced systems to ensure complete safety." }
+                ]
+              },
+              {
+                "slug": "gate-entry-security",
+                "title": {
+                  "normal": "Gate & Entry",
+                  "highlighted": "Security Services"
+                },
+                "description": "Keep your entrance controlled and welcoming with professional gate security, visitor verification and clear access procedures tailored to your property.",
+                "heroImage": "/security/guard7.jpg",
+                "heroImageAlt": "Security camera and controlled entrance at a property",
+                "benefits": [
+                  { "icon": "door", "label": "Controlled Access" },
+                  { "icon": "user-check", "label": "Visitor Checks" },
+                  { "icon": "clipboard", "label": "Entry Records" },
+                  { "icon": "shield", "label": "Safer Premises" }
+                ],
+                "overviewImage": "/security/guard5.jpg",
+                "overviewImageAlt": "Security guard managing access at a site entrance",
+                "overviewTitle": "A Secure, Welcoming Entrance",
+                "overviewDescription": "Our gate and entry teams help you maintain control without slowing down legitimate visitors. Guards follow your access rules, verify arrivals and keep accurate records while providing a professional first point of contact.",
+                "overviewPoints": [
+                  "Visitor and contractor identity verification",
+                  "Access granted in line with your site procedures",
+                  "Accurate visitor logs and vehicle records",
+                  "Professional reception and gatehouse presence",
+                  "Prompt reporting of access concerns",
+                  "Solutions for residential and business premises"
+                ],
+                "featuresTitle": "Key Features",
+                "featuresDescription": "Consistent entry procedures and professional service at every access point.",
+                "features": [
+                  { "icon": "door", "title": "Access Management", "description": "Entry checks follow the rules established for your site." },
+                  { "icon": "user-check", "title": "Visitor Verification", "description": "Visitors and contractors are checked before entry." },
+                  { "icon": "clipboard", "title": "Entry Records", "description": "Clear logs help you maintain a useful record of arrivals." },
+                  { "icon": "car", "title": "Vehicle Checks", "description": "Monitor vehicle access to help protect your premises." },
+                  { "icon": "message", "title": "Visitor Assistance", "description": "A professional first point of contact for your guests." },
+                  { "icon": "shield-check", "title": "Incident Escalation", "description": "Access concerns are reported promptly to the right contact." }
+                ]
+              },
+              {
+                "slug": "event-vip-security",
+                "title": {
+                  "normal": "Event & VIP",
+                  "highlighted": "Security Services"
+                },
+                "description": "Create a safe, well-managed experience with discreet VIP protection, professional event security and crowd support planned around your occasion.",
+                "heroImage": "/security/guard8.jpg",
+                "heroImageAlt": "Security team supporting a public event",
+                "benefits": [
+                  { "icon": "users", "label": "Crowd Support" },
+                  { "icon": "shield", "label": "VIP Protection" },
+                  { "icon": "door", "label": "Entry Control" },
+                  { "icon": "radio", "label": "On-Site Coordination" }
+                ],
+                "overviewImage": "/security/guard4.jpg",
+                "overviewImageAlt": "Professional security personnel on event duty",
+                "overviewTitle": "Security Planned Around Your Event",
+                "overviewDescription": "From guest arrival to close of event, our security personnel work with your organizers to manage access, support crowd movement and respond calmly to changing conditions. Assignments are planned around your venue, schedule and audience.",
+                "overviewPoints": [
+                  "Event-specific security planning and briefings",
+                  "Guest screening and controlled entry points",
+                  "Crowd guidance and queue management",
+                  "Discreet close protection for VIP guests",
+                  "Coordination with event staff and venue teams",
+                  "Support for private, corporate and public events"
+                ],
+                "featuresTitle": "Key Features",
+                "featuresDescription": "Professional security that helps your guests feel safe and welcome.",
+                "features": [
+                  { "icon": "clipboard", "title": "Event Planning", "description": "Security arrangements shaped around the venue and schedule." },
+                  { "icon": "door", "title": "Guest Screening", "description": "Organized entry checks help protect event access points." },
+                  { "icon": "users", "title": "Crowd Management", "description": "Support for orderly movement, queues and busy areas." },
+                  { "icon": "shield", "title": "VIP Protection", "description": "Professional, discreet support for high-profile guests." },
+                  { "icon": "radio", "title": "Team Coordination", "description": "Clear communication with organizers and venue personnel." },
+                  { "icon": "zap", "title": "Responsive Support", "description": "Trained staff prepared to act calmly when needs change." }
+                ]
+              },
+              {
+                "slug": "mobile-patrol-services",
+                "title": {
+                  "normal": "Mobile Patrol",
+                  "highlighted": "Security Services"
+                },
+                "description": "Add a flexible security presence across your property with scheduled mobile patrols, site inspections and prompt reporting of anything unusual.",
+                "heroImage": "/security/guard9.jpg",
+                "heroImageAlt": "Mobile security patrol officer carrying out a site check",
+                "benefits": [
+                  { "icon": "car", "label": "Mobile Coverage" },
+                  { "icon": "clock", "label": "Scheduled Checks" },
+                  { "icon": "clipboard", "label": "Patrol Reports" },
+                  { "icon": "shield", "label": "Visible Deterrence" }
+                ],
+                "overviewImage": "/security/guard2.jpg",
+                "overviewImageAlt": "Security patrol inspecting a protected property",
+                "overviewTitle": "Flexible Patrols for Your Property",
+                "overviewDescription": "Mobile patrols provide a visible and adaptable way to check your premises. Our officers follow agreed routes and schedules, inspect key areas and report concerns so you can respond with a clear understanding of what happened.",
+                "overviewPoints": [
+                  "Scheduled or randomized patrol visits",
+                  "Checks of entrances, boundaries and key areas",
+                  "Visible mobile presence to discourage trespassing",
+                  "Prompt reporting of damage or unusual activity",
+                  "Locking and opening checks by arrangement",
+                  "Useful for multiple or wide-area properties"
+                ],
+                "featuresTitle": "Key Features",
+                "featuresDescription": "Flexible patrol coverage to help protect sites between busy periods and after hours.",
+                "features": [
+                  { "icon": "car", "title": "Mobile Patrols", "description": "A flexible security presence that moves across your site." },
+                  { "icon": "clock", "title": "Planned Visits", "description": "Patrol timing arranged to suit your security requirements." },
+                  { "icon": "radio", "title": "Perimeter Checks", "description": "Officers inspect agreed boundaries and access points." },
+                  { "icon": "clipboard", "title": "Visit Reporting", "description": "Documented patrol activity and clear incident updates." },
+                  { "icon": "key", "title": "Lock & Unlock", "description": "Opening and closing checks available by arrangement." },
+                  { "icon": "shield-check", "title": "Rapid Escalation", "description": "Concerns are passed on quickly for appropriate follow-up." }
+                ]
+              },
+              {
+                "slug": "commercial-industrial-security",
+                "title": {
+                  "normal": "Commercial & Industrial",
+                  "highlighted": "Security Services"
+                },
+                "description": "Protect your business, workforce and operations with customized security solutions for offices, factories, warehouses and industrial premises.",
+                "heroImage": "/security/guard10.jpg",
+                "heroImageAlt": "Security professionals protecting a commercial property",
+                "benefits": [
+                  { "icon": "building", "label": "Site-Specific Plans" },
+                  { "icon": "shield", "label": "Asset Protection" },
+                  { "icon": "user-check", "label": "Trained Personnel" },
+                  { "icon": "clock", "label": "Dependable Coverage" }
+                ],
+                "overviewImage": "/security/guard1.jpg",
+                "overviewImageAlt": "Security guard providing protection at a commercial site",
+                "overviewTitle": "Security That Supports Your Operations",
+                "overviewDescription": "Commercial and industrial sites need security that fits the way people and goods move through them. We work with you to understand your operations, identify priorities and provide trained personnel and practical procedures for your environment.",
+                "overviewPoints": [
+                  "Security plans tailored to your site and operating hours",
+                  "Staff, visitor and contractor access management",
+                  "Protection for equipment, inventory and property",
+                  "Patrols and checks for critical areas",
+                  "Clear reporting and escalation procedures",
+                  "Coverage for offices, factories and warehouses"
+                ],
+                "featuresTitle": "Key Features",
+                "featuresDescription": "Scalable protection built around your people, premises and business operations.",
+                "features": [
+                  { "icon": "building", "title": "Site-Specific Security", "description": "A practical approach tailored to your property and operations." },
+                  { "icon": "user-check", "title": "Access Management", "description": "Support for staff, visitor and contractor access procedures." },
+                  { "icon": "shield-check", "title": "Asset Protection", "description": "Help safeguard equipment, inventory and business property." },
+                  { "icon": "radio", "title": "Site Patrols", "description": "Regular checks of agreed operational and perimeter areas." },
+                  { "icon": "clipboard", "title": "Clear Reporting", "description": "Useful shift records and prompt incident escalation." },
+                  { "icon": "clock", "title": "Scalable Coverage", "description": "Security schedules that adapt to your operating hours." }
+                ]
               }
             ]
           }
@@ -891,8 +1135,8 @@
                   "icon": "mail",
                   "lines": [
                     {
-                      "text": "info@safeguardsecurity.com",
-                      "href": "mailto:info@safeguardsecurity.com"
+                      "text": "info@example.com",
+                      "href": "mailto:info@example.com"
                     }
                   ]
                 },
@@ -1012,6 +1256,23 @@
                 }
               ]
             },
+            "detailBanner": {
+              "title": "Team Member",
+              "image": "/security/guard1.jpg",
+              "items": [
+                {
+                  "label": "Home",
+                  "href": "/"
+                },
+                {
+                  "label": "Our Team",
+                  "href": "/team"
+                },
+                {
+                  "label": "Team Member"
+                }
+              ]
+            },
             "heading": {
               "badge": "OUR TEAM",
               "title": "Meet Our Security Professionals"
@@ -1072,6 +1333,128 @@
                 "name": "Deepika Mishra",
                 "position": "Client Relations Executive",
                 "image": "/people/women4.png"
+              }
+            ],
+            "details": [
+              {
+                "slug": "arvind-sharma",
+                "name": "Arvind Sharma",
+                "position": "Chief Security Officer",
+                "image": "/people/man1.png",
+                "imageAlt": "Arvind Sharma, Chief Security Officer",
+                "biography": "Arvind leads our security strategy and ensures every assignment is built around the safety of our clients and their people. With extensive experience in security operations, he oversees site assessments, service standards and incident readiness. He works closely with clients to understand their risks and translate them into practical plans. Arvind also supports and mentors our leadership team, building a culture of accountability, professionalism and calm decision-making. His focus is dependable protection and long-term client confidence.",
+                "highlights": [
+                  "Leads security strategy and operational standards",
+                  "Oversees client risk assessments and protection plans",
+                  "Guides incident response and escalation readiness",
+                  "Mentors team leaders and security supervisors",
+                  "Builds trusted relationships with clients"
+                ]
+              },
+              {
+                "slug": "priya-singh",
+                "name": "Priya Singh",
+                "position": "Operations Manager",
+                "image": "/people/women1.png",
+                "imageAlt": "Priya Singh, Operations Manager",
+                "biography": "Priya coordinates the people and processes that keep our security services running smoothly every day. She manages assignments, schedules and operational communication so each client receives consistent coverage. Priya works with supervisors to address changing site requirements and makes sure teams have clear instructions before every shift. She is known for her organized approach, thoughtful problem-solving and steady support for both clients and colleagues. Her priority is reliable service with the right people in the right place.",
+                "highlights": [
+                  "Coordinates staffing and day-to-day assignments",
+                  "Maintains dependable coverage across client sites",
+                  "Communicates operational updates clearly",
+                  "Supports supervisors with changing requirements",
+                  "Monitors service quality and follow-through"
+                ]
+              },
+              {
+                "slug": "rakesh-kumar",
+                "name": "Rakesh Kumar",
+                "position": "Security Supervisor",
+                "image": "/people/men2.png",
+                "imageAlt": "Rakesh Kumar, Security Supervisor",
+                "biography": "Rakesh supports frontline teams and helps ensure that site procedures are followed with care and consistency. He checks in with officers, reviews shift handovers and provides practical guidance when situations need attention. His hands-on approach helps identify small concerns before they become larger issues. Rakesh also keeps communication flowing between clients, guards and operations, making sure information reaches the right people. He takes pride in maintaining a professional, visible and dependable security presence.",
+                "highlights": [
+                  "Supervises guards and daily site routines",
+                  "Checks shift handovers and assignment readiness",
+                  "Reinforces client procedures and service standards",
+                  "Escalates incidents through clear channels",
+                  "Provides practical support to frontline officers"
+                ]
+              },
+              {
+                "slug": "ananya-sharma",
+                "name": "Ananya Sharma",
+                "position": "Training Coordinator",
+                "image": "/people/women2.png",
+                "imageAlt": "Ananya Sharma, Training Coordinator",
+                "biography": "Ananya helps our security professionals build the knowledge and confidence they need to serve clients well. She coordinates onboarding and ongoing learning, with a focus on communication, awareness and responsible response. Ananya works with supervisors to identify useful coaching opportunities and keep training relevant to the environments our teams protect. She encourages a thoughtful, respectful approach to every interaction. Her work helps officers stay prepared, professional and ready to adapt to changing site needs.",
+                "highlights": [
+                  "Coordinates team onboarding and ongoing learning",
+                  "Supports role-specific site briefings",
+                  "Promotes clear communication and situational awareness",
+                  "Works with supervisors on coaching needs",
+                  "Encourages professional and respectful conduct"
+                ]
+              },
+              {
+                "slug": "vikram-yadav",
+                "name": "Vikram Yadav",
+                "position": "Team Leader",
+                "image": "/people/men3.png",
+                "imageAlt": "Vikram Yadav, Team Leader",
+                "biography": "Vikram leads security teams on the ground, setting a positive example through consistency and professionalism. He makes sure officers understand their responsibilities, communicate effectively and provide a welcoming presence for clients and visitors. During each shift, Vikram monitors site activity and supports his team as priorities change. He believes strong teamwork and clear handovers are essential to dependable protection. His practical leadership helps create a secure and well-managed environment for everyone on site.",
+                "highlights": [
+                  "Leads and supports officers during assigned shifts",
+                  "Sets clear expectations for site responsibilities",
+                  "Promotes teamwork and reliable handovers",
+                  "Monitors activity and raises concerns promptly",
+                  "Maintains a professional presence for guests and clients"
+                ]
+              },
+              {
+                "slug": "meena-rawat",
+                "name": "Meena Rawat",
+                "position": "Control Room Operator",
+                "image": "/people/women5.png",
+                "imageAlt": "Meena Rawat, Control Room Operator",
+                "biography": "Meena helps maintain awareness across monitored sites by handling information carefully and communicating it promptly. She supports control-room operations, keeps clear records and coordinates updates with field teams when attention is needed. Meena stays composed while managing multiple requests and follows established procedures to ensure important details are not missed. Her careful observation and dependable communication help strengthen our wider response. She is committed to providing attentive support around the clock.",
+                "highlights": [
+                  "Supports monitoring and control-room operations",
+                  "Records important updates with care and accuracy",
+                  "Coordinates timely communication with field teams",
+                  "Follows established escalation procedures",
+                  "Maintains calm focus across changing priorities"
+                ]
+              },
+              {
+                "slug": "suresh-verma",
+                "name": "Suresh Verma",
+                "position": "Mobile Patrol Officer",
+                "image": "/people/men4.png",
+                "imageAlt": "Suresh Verma, Mobile Patrol Officer",
+                "biography": "Suresh carries out mobile patrols and site checks to help clients maintain a visible and responsive security presence. He follows agreed routes, pays close attention to entrances and boundaries, and records relevant observations from each visit. When he identifies an issue, Suresh communicates it through the appropriate channels so it can be addressed quickly. He approaches every assignment with care, punctuality and respect for the property he protects. His work helps clients feel informed and supported between on-site shifts.",
+                "highlights": [
+                  "Completes scheduled mobile patrols and site checks",
+                  "Inspects agreed entrances, boundaries and key areas",
+                  "Documents visits and notable observations",
+                  "Reports concerns through clear escalation channels",
+                  "Provides a punctual and visible security presence"
+                ]
+              },
+              {
+                "slug": "deepika-mishra",
+                "name": "Deepika Mishra",
+                "position": "Client Relations Executive",
+                "image": "/people/women4.png",
+                "imageAlt": "Deepika Mishra, Client Relations Executive",
+                "biography": "Deepika is a key point of contact for clients, helping ensure questions and service requests receive thoughtful attention. She listens closely, shares updates with the appropriate teams and follows through so clients know what to expect. Her clear communication helps connect day-to-day site operations with each client's priorities. Deepika values responsive service and the trust built through consistent, respectful interactions. She works to make every client feel heard, informed and confident in their security support.",
+                "highlights": [
+                  "Builds clear and responsive client communication",
+                  "Coordinates service requests with internal teams",
+                  "Shares useful updates and follows through",
+                  "Listens to client feedback and changing priorities",
+                  "Strengthens long-term, trusted working relationships"
+                ]
               }
             ]
           }
@@ -1160,6 +1543,134 @@
                 "image": "/cta.png"
               }
             ]
+          }
+        }
+      },
+      "FAQ": {
+        "variants": {
+          "SecurityFAQ1": {
+            "banner": {
+              "title": "Faq",
+              "image": "/security/guard8.jpg",
+              "items": [
+                {
+                  "label": "Home",
+                  "href": "/"
+                },
+                {
+                  "label": "Faq"
+                }
+              ]
+            },
+            "badge": "FAQS",
+            "title": {
+              "normal": "Frequently Asked",
+              "highlighted": "Questions"
+            },
+            "desc": "Find answers to common questions about our security guard services, staffing, training, and custom security solutions.",
+            "image": "/security/guard5.jpg",
+            "items": [
+              {
+                "id": 1,
+                "question": "What types of security guard services do you provide?",
+                "answer": "We provide a wide range of security guard services including commercial, residential, industrial, event, retail, construction site, and healthcare security. Our services are customized to meet the specific needs of each client."
+              },
+              {
+                "id": 2,
+                "question": "Are your security guards trained and verified?",
+                "answer": "Yes, all our security personnel undergo rigorous background checks, professional training, and verification procedures before deployment."
+              },
+              {
+                "id": 3,
+                "question": "Can you provide security for short-term events?",
+                "answer": "We offer flexible security guard staffing for corporate events, private parties, concerts, exhibitions, and short-term assignments."
+              },
+              {
+                "id": 4,
+                "question": "Do you offer 24/7 security services?",
+                "answer": "Yes, our security teams and monitoring centers operate round the clock to ensure uninterrupted protection for your premises."
+              },
+              {
+                "id": 5,
+                "question": "What industries do you serve?",
+                "answer": "We serve a wide variety of sectors including corporate offices, residential societies, industrial plants, healthcare facilities, and retail centers."
+              },
+              {
+                "id": 6,
+                "question": "How do you ensure the quality of your security personnel?",
+                "answer": "We maintain strict supervision, regular performance audits, ongoing training programs, and direct communication channels with our guards."
+              },
+              {
+                "id": 7,
+                "question": "Can we request a customized security plan?",
+                "answer": "Every property has unique risks. We conduct site assessments to build tailored security protocols specific to your operational requirements."
+              },
+              {
+                "id": 8,
+                "question": "How do we get a quote for security services?",
+                "answer": "You can reach out to us via our contact form, phone, or email to discuss your security needs and receive a transparent, competitive estimate."
+              }
+            ]
+          }
+        }
+      },
+      "Contact": {
+        "variants": {
+          "SecurityContact1": {
+            "banner": {
+              "title": "Contact Us",
+              "image": "/security/guard8.jpg",
+              "items": [
+                {
+                  "label": "Home",
+                  "href": "/"
+                },
+                {
+                  "label": "Contact Us"
+                }
+              ]
+            },
+            "badge": "CONTACT US",
+            "title": {
+              "normal": "Secure your",
+              "highlighted": "world",
+              "postTitle": "with us"
+            },
+            "desc": "Have questions or need a customized security solution? Our team is here to assist you. Get in touch with us today.",
+            "infoCards": [
+              {
+                "icon": "phone",
+                "label": "Phone Number",
+                "value": "+91 1234567890",
+                "href": "tel:+911234567890"
+              },
+              {
+                "icon": "mail",
+                "label": "Email Address",
+                "value": "info@example.com",
+                "href": "mailto:info@example.com"
+              },
+              {
+                "icon": "location",
+                "label": "Location",
+                "value": "123 Secure Street, New Delhi, India",
+                "href": "#"
+              }
+            ],
+            "socialLinks": [
+              { "icon": "instagram", "href": "#" },
+              { "icon": "linkedin", "href": "#" },
+              { "icon": "pinterest", "href": "#" },
+              { "icon": "twitter", "href": "#" }
+            ],
+            "form": {
+              "title": {
+                "normal": "Send us",
+                "highlighted": "message"
+              },
+              "desc": "We specialize in providing top-quality security and CCTV solutions to safeguard your home and business."
+            },
+            "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14010.824707647036!2d77.2090062!3d28.6139391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b7153d9640!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1650000000000!5m2!1sen!2sin"
           }
         }
       }

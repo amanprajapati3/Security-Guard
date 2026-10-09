@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { getTeamMembers, site, type SecurityTeamMember } from "@/data";
+import ScrollReveal from "../../shared/ScrollReveal";
 
 /* Hover design: navy overlay + yellow outer border + navy inner frame +
    yellow L bracket on every corner, each pointing in its own direction. */
@@ -42,9 +43,11 @@ function HoverFrame({ name, position }: { name: string; position: string }) {
 function TeamCard({
   member,
   inTrack = false,
+  index = 0,
 }: {
   member: SecurityTeamMember;
   inTrack?: boolean;
+  index?: number;
 }) {
   return (
     <Link
@@ -53,7 +56,7 @@ function TeamCard({
       data-slug={member.slug}
       className={`group block ${inTrack ? "w-full shrink-0 snap-start" : "w-full"}`}
     >
-      <div className="relative aspect-[3/4] overflow-hidden bg-slate-100 transition-all duration-500 group-hover:shadow-[0_20px_45px_rgba(6,25,74,0.30)]">
+      <ScrollReveal as="div" direction="up" index={index} staggerChildren={0.08} className="relative aspect-[3/4] overflow-hidden bg-slate-100 transition-all duration-500 group-hover:shadow-[0_20px_45px_rgba(6,25,74,0.30)]">
         <Image
           src={member.image}
           alt={`${member.name} - ${member.position}`}
@@ -62,7 +65,7 @@ function TeamCard({
           className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
         />
         <HoverFrame name={member.name} position={member.position} />
-      </div>
+      </ScrollReveal>
     </Link>
   );
 }
@@ -107,10 +110,11 @@ export default function Team() {
   }, []);
 
   return (
+    <ScrollReveal direction="none" duration={0.6}>
     <section className="bg-white py-8 md:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading: badge + title */}
-        <div className="mx-auto max-w-4xl text-center">
+        <ScrollReveal as="div" direction="up" className="mx-auto max-w-4xl text-center">
           <div className="flex items-center justify-center gap-3">
             <span className="h-0.5 w-8 bg-[#fdb913] sm:w-10" />
             <span className="text-xs font-bold uppercase text-[#06194a] sm:text-[13px] lg:text-[17px]">
@@ -123,7 +127,7 @@ export default function Team() {
               {d.heading.title.split(" ").slice(-2).join(" ")}
             </span>
           </h2>{" "}
-        </div>
+        </ScrollReveal>
 
         {/* Mobile: horizontal scroll with dots */}
         <div className="mt-12 sm:hidden">
@@ -132,8 +136,8 @@ export default function Team() {
             onScroll={updatePage}
             className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
-            {members.map((member) => (
-              <TeamCard key={member.slug} member={member} inTrack />
+            {members.map((member, i) => (
+              <TeamCard key={member.slug} member={member} inTrack index={i} />
             ))}
           </div>
 
@@ -154,11 +158,12 @@ export default function Team() {
 
         {/* Tablet: 2 per row, Desktop: 4 per row (4-4) */}
         <div className="mt-12 hidden sm:grid sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
-          {members.map((member) => (
-            <TeamCard key={member.slug} member={member} />
+          {members.map((member, i) => (
+            <TeamCard key={member.slug} member={member} index={i} />
           ))}
         </div>
       </div>
     </section>
+    </ScrollReveal>
   );
 }

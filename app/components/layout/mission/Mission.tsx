@@ -6,6 +6,7 @@ import {
 import type { IconType } from "react-icons";
 import { site } from "@/data";
 import { RiTargetFill } from "react-icons/ri";
+import ScrollReveal from "../../shared/ScrollReveal";
 
 
 /* Maps icon strings to react-icons */
@@ -43,12 +44,13 @@ export default function Mission() {
   const m = site.mission;
 
   return (
+    <ScrollReveal direction="none" duration={0.6}>
     <section className="relative overflow-hidden bg-white py-8 md:py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Side: Content, Headings, and Mission/Vision Cards */}
-          <div className="lg:col-span-6 flex flex-col justify-center">
+          <ScrollReveal as="div" direction="right" mobileDirection="up" className="lg:col-span-6 flex flex-col justify-center">
             <SectionLabel text={m.badge} />
             
             <h2 className="mt-1 text-3xl font-bold leading-tight text-[#06194a] sm:text-4xl ">
@@ -64,8 +66,12 @@ export default function Mission() {
               {m.items.map((item, index) => {
                 const isVision = index === 1;
                 return (
-                  <div
+                  <ScrollReveal
+                    as="div"
                     key={item.id}
+                    direction="up"
+                    index={index}
+                    staggerChildren={0.12}
                     className={`flex flex-col sm:flex-row items-start sm:items-center gap-5 p-3 rounded-2xl shadow-sm border transition-all duration-300 ${
                       isVision
                         ? "bg-[#fffcf0] border-[#fde9a2]"
@@ -88,14 +94,14 @@ export default function Mission() {
                         {item.description}
                       </p>
                     </div>
-                  </div>
+                  </ScrollReveal>
                 );
               })}
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right Side: Image with Top-Left Navy Frame and Bottom-Right Yellow Frame */}
-          <div className="lg:col-span-6 relative flex justify-center lg:justify-end">
+          <ScrollReveal as="div" direction="left" mobileDirection="up" className="lg:col-span-6 relative flex justify-center lg:justify-end">
             <div className="relative w-full max-w-xl">
               
               {/* Top-Left Dark Blue Border/Corner Frame */}
@@ -116,10 +122,11 @@ export default function Mission() {
               </div>
 
             </div>
-          </div>
+          </ScrollReveal>
 
         </div>
       </div>
     </section>
+    </ScrollReveal>
   );
 }

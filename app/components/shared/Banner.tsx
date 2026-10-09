@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ScrollReveal from "./ScrollReveal";
 
 export interface BannerPageItem {
   label: string;
@@ -10,15 +11,20 @@ export interface BannerProps {
   title: string;
   image: string;
   items?: BannerPageItem[];
+  compact?: boolean;
 }
 
 export default function Banner({
   title,
   image,
   items = [],
+  compact = false,
 }: BannerProps) {
   return (
-    <section className="relative mt-8 isolate flex min-h-[420px] items-center overflow-hidden bg-[#06194a] sm:mt-10 sm:min-h-[440px]">
+    <ScrollReveal direction="up">
+    <section
+      className={`relative mt-8 isolate flex items-center overflow-hidden bg-[#06194a] sm:mt-10 min-h-[420px] sm:min-h-[440px]`}
+    >
 
       {/* Background Image */}
       <Image
@@ -55,9 +61,15 @@ export default function Banner({
 
       {/* Content */}
       <div className="relative mx-auto px-4 py-20 sm:px-6 lg:px-8">
-        <div className="flex flex-col   justify-center gap-4">
+        <div className="flex flex-col justify-center gap-4">
           {/* Title */}
-          <h1 className="text-4xl text-center font-bold leading-tight uppercase text-white sm:text-5xl lg:text-6xl">
+          <h1
+            className={`text-center font-bold leading-tight uppercase text-white ${
+              compact
+                ? "text-3xl sm:text-4xl lg:text-[42px]"
+                : "text-4xl sm:text-5xl lg:text-6xl"
+            }`}
+          >
             {title}
           </h1>
 
@@ -65,7 +77,9 @@ export default function Banner({
           {items.length > 0 && (
             <nav
               aria-label="Breadcrumb"
-              className="flex flex-wrap mx-10 justify-center bg-white/20 py-2 px-6 rounded-full items-center gap-2 text-sm text-white sm:text-base"
+              className={`mx-auto flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full bg-white/20 text-sm text-white sm:text-base ${
+                compact ? "px-4 py-1.5" : "mx-10 px-6 py-2"
+              }`}
             >
               {items.map((item, i) => (
                 <span
@@ -96,5 +110,6 @@ export default function Banner({
         </div>
       </div>
     </section>
+    </ScrollReveal>
   );
 }

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { LuArrowRight } from "react-icons/lu";
 import { site } from "@/data";
+import ScrollReveal from "../shared/ScrollReveal";
 
 /* Small "—— LABEL ——" eyebrow used above every section heading */
 function SectionLabel({
@@ -38,6 +39,7 @@ export default function SecurityCta() {
   const c = site.cta;
 
   return (
+    <ScrollReveal direction="none" duration={0.6}>
     <section className="relative isolate overflow-hidden bg-[#06194a] text-white">
       <Image
         src={c.bgImage}
@@ -53,16 +55,18 @@ export default function SecurityCta() {
 
       <div className="absolute -right-4 top-0 -z-10 hidden h-full w-16 -skew-x-[20deg] bg-[#fdb913] lg:block xl:right-[6%]" />
       <div className="absolute hidden md:flex right-10 top-1/2 z-10 h-[300px] w-[300px] -translate-y-1/2">
-        <Image
-          src={c.image}
-          alt="ctaimage"
-          fill
-          sizes="200px"
-          className="object-contain"
-        />
+        <ScrollReveal as="div" direction="left" className="relative h-full w-full">
+          <Image
+            src={c.image}
+            alt="ctaimage"
+            fill
+            sizes="200px"
+            className="object-contain"
+          />
+        </ScrollReveal>
       </div>
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 ">
-        <div className="max-w-xl">
+        <ScrollReveal as="div" direction="right" mobileDirection="up" className="max-w-xl">
           <SectionLabel text={c.badge} tone="yellow" />
           <h2 className="mt-1 text-3xl font-bold leading-tight sm:text-4xl lg:text-[42px]">
             {c.title.normal}{" "}
@@ -81,8 +85,9 @@ export default function SecurityCta() {
               <LuArrowRight size={16} />
             </span>
           </Link>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
+    </ScrollReveal>
   );
 }

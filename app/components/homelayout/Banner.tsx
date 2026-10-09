@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { LuArrowRight, LuCheck, LuChevronLeft, LuChevronRight } from "react-icons/lu";
 import { site } from "@/data";
+import ScrollReveal from "../shared/ScrollReveal";
 
 /* Small "—— LABEL ——" eyebrow used above every section heading */
 function SectionLabel({
@@ -49,6 +50,7 @@ export default function SecurityBanner() {
   }, [autoplay, paused, interval, total]);
 
   return (
+    <ScrollReveal direction="up">
     <section
       className="relative isolate w-full overflow-hidden bg-[#06194a] text-white"
       onMouseEnter={() => setPaused(true)}
@@ -130,7 +132,7 @@ export default function SecurityBanner() {
                         <Link
                           key={btn.label}
                           href={btn.href}
-                          className="inline-flex items-center gap-3 rounded-full bg-[#fdb913] px-8 text-sm font-bold text-[#06194a] shadow-lg transition-all duration-300 hover:bg-white sm:text-base"
+                          className="inline-flex items-center gap-3 rounded-full bg-[#fdb913] py-3.5 px-8 text-sm font-bold text-[#06194a] shadow-lg transition-all duration-300 hover:bg-white sm:text-base"
                         >
                           {btn.label}
 
@@ -194,5 +196,6 @@ export default function SecurityBanner() {
         </>
       )}
     </section>
+    </ScrollReveal>
   );
 }

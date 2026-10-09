@@ -15,6 +15,7 @@ import {
   site,
   type SecurityGalleryImage,
 } from "@/data";
+import ScrollReveal from "../../shared/ScrollReveal";
 
 /* Wraps around the collection so the dialog can slide forever */
 function slideImage(
@@ -97,10 +98,11 @@ export default function Gallery() {
     };
   }, [active, images]);
   return (
+    <ScrollReveal direction="none" duration={0.6}>
     <section className="bg-white py-8 md:py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading: badge + title */}
-        <div className="mx-auto max-w-4xl text-center">
+        <ScrollReveal as="div" direction="up" className="mx-auto max-w-4xl text-center">
           <div className="flex items-center justify-center gap-3">
             <span className="h-0.5 w-8 bg-[#fdb913] sm:w-10" />
             <span className="text-xs font-bold uppercase text-[#06194a] sm:text-[13px] lg:text-[17px]">
@@ -113,17 +115,19 @@ export default function Gallery() {
               {d.heading.title.split(" ").slice(-2).join(" ")}
             </span>
           </h2>{" "}
-        </div>
+        </ScrollReveal>
 
         {/* Mobile: horizontal scroll */}
         <div className="mt-12 sm:hidden">
           <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {visible.map((image) => (
+            {visible.map((image, i) => (
               <div
                 key={image.id}
                 className="w-[78%] shrink-0 snap-start last:mr-4"
               >
-                <GalleryTile image={image} onOpen={setActive} />
+                <ScrollReveal as="div" index={i} staggerChildren={0.08} className="w-full">
+                  <GalleryTile image={image} onOpen={setActive} />
+                </ScrollReveal>
               </div>
             ))}
           </div>
@@ -131,8 +135,10 @@ export default function Gallery() {
 
         {/* Tablet: 2 per row, Desktop: 4 per row */}
         <div className="mt-12 hidden sm:grid sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
-          {visible.map((image) => (
-            <GalleryTile key={image.id} image={image} onOpen={setActive} />
+          {visible.map((image, i) => (
+            <ScrollReveal as="div" key={image.id} index={i} staggerChildren={0.08} className="w-full">
+              <GalleryTile image={image} onOpen={setActive} />
+            </ScrollReveal>
           ))}
         </div>
 
@@ -226,5 +232,6 @@ export default function Gallery() {
         </div>
       )}
     </section>
+    </ScrollReveal>
   );
 }

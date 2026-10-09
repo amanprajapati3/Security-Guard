@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { LuBuilding2, LuMapPin, LuShieldCheck, LuUsers } from "react-icons/lu";
 import type { IconType } from "react-icons";
 import { getStats, site } from "@/data";
+import ScrollReveal from "../shared/ScrollReveal";
 
 /* Maps the icon strings used in siteData.json to react-icons */
 const iconMap: Record<string, IconType> = {
@@ -97,6 +98,7 @@ export default function SecurityStats() {
   const stats = getStats();
 
   return (
+    <ScrollReveal direction="none" duration={0.6}>
     <section className="relative isolate overflow-hidden py-8 md:py-12 my-12 text-white ">
       <Image
         src={s.bgImage}
@@ -114,7 +116,7 @@ export default function SecurityStats() {
       />
       
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <ScrollReveal as="div" direction="up" className="mx-auto max-w-2xl text-center">
           <SectionLabel text={s.badge} tone="white" center />
           <h2 className="mt-3 text-3xl font-bold  sm:text-4xl lg:text-[44px]">
             {s.title.normal}
@@ -123,12 +125,16 @@ export default function SecurityStats() {
           <p className="mt-4 text-base leading-relaxed text-white/85 sm:text-base">
             {s.desc}
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-x-3 gap-y-12 sm:gap-x-4 lg:grid-cols-4">
           {stats.map((st, i) => (
-            <div
+            <ScrollReveal
+              as="div"
               key={st.id}
+              direction="none"
+              index={i}
+              staggerChildren={0.12}
               className="relative rounded-xl border border-white/25 bg-[#0c3052]/80 px-3 py-4 text-center backdrop-blur-md transition-transform duration-300 hover:-translate-y-2 sm:px-12"
             >
               {/* Centered Icon */}
@@ -151,10 +157,11 @@ export default function SecurityStats() {
               <div className="mt-1 text-sm  text-white sm:text-base">
                 {st.label}
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
     </section>
+    </ScrollReveal>
   );
 }

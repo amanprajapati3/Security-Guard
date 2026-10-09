@@ -10,6 +10,7 @@ import {
 } from "react-icons/lu";
 import type { IconType } from "react-icons";
 import { site } from "@/data";
+import ScrollReveal from "../shared/ScrollReveal";
 
 const iconMap: Record<string, IconType> = {
   shield: LuShield,
@@ -87,13 +88,14 @@ export default function SecurityAbout({ hideButton = false }: { hideButton?: boo
   const a = site.about;
 
   return (
+    <ScrollReveal direction="none" duration={0.6}>
     <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#f3f7ff] to-[#e9f0ff] py-8 md:py-12">
       <DotPattern className="right-4 top-6 hidden h-28 w-28 sm:block" />
       <DotPattern className="bottom-4 left-4 hidden h-24 w-24 sm:block" />
 
       <div className="relative mx-auto flex max-w-7xl flex-col gap-12 px-4 sm:px-6 lg:grid lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 lg:px-8">
         {/* Content */}
-        <div className="relative order-1 flex flex-col items-center text-center lg:order-2 lg:items-start lg:text-left">
+        <ScrollReveal as="div" direction="left" mobileDirection="up" className="relative order-1 flex flex-col items-center text-center lg:order-2 lg:items-start lg:text-left">
           {/* Experience badge - desktop */}
           <div className="absolute right-0 top-0 hidden items-center gap-3 rounded-xl border-b-4 border-[#fdb913] bg-[#06194a] px-4 py-3 text-left text-white shadow-lg lg:flex">
             <Icon
@@ -137,8 +139,12 @@ export default function SecurityAbout({ hideButton = false }: { hideButton?: boo
           {/* Feature cards */}
           <div className="mt-8 grid w-full max-w-3xl gap-4 sm:grid-cols-2">
             {a.features.map((f, i) => (
-              <div
+              <ScrollReveal
+                as="div"
                 key={f.id}
+                direction="none"
+                index={i}
+                staggerChildren={0.08}
                 className="flex items-start gap-3 rounded-xl border border-slate-100 bg-white p-4 text-left shadow-[0_6px_24px_rgba(10,47,143,0.08)] transition-transform duration-300 hover:-translate-y-1"
               >
                 <div
@@ -160,7 +166,7 @@ export default function SecurityAbout({ hideButton = false }: { hideButton?: boo
                     {f.description}
                   </p>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
 
@@ -176,10 +182,10 @@ export default function SecurityAbout({ hideButton = false }: { hideButton?: boo
               </span>
             </Link>
           )}
-        </div>
+        </ScrollReveal>
 
         {/* Image */}
-        <div className="relative order-2 mx-auto w-full max-w-md lg:order-1 lg:max-w-none">
+        <ScrollReveal as="div" direction="right" mobileDirection="up" className="relative order-2 mx-auto w-full max-w-md lg:order-1 lg:max-w-none">
           {/* Experience badge - mobile/tablet */}
           <div className="absolute -right-2 -top-5 z-20 flex items-center gap-3 rounded-xl border-b-4 border-[#fdb913] bg-[#06194a] px-4 py-3 text-left text-white shadow-lg sm:-right-3 sm:-top-6 lg:hidden">
             <Icon
@@ -217,8 +223,9 @@ export default function SecurityAbout({ hideButton = false }: { hideButton?: boo
               className="object-cover"
             />
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
+    </ScrollReveal>
   );
 }

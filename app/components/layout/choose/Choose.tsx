@@ -8,6 +8,7 @@ import {
 } from "react-icons/lu";
 import type { IconType } from "react-icons";
 import { site } from "@/data";
+import ScrollReveal from "../../shared/ScrollReveal";
 
 /* Maps icon strings to react-icons */
 const iconMap: Record<string, IconType> = {
@@ -48,11 +49,12 @@ export default function WhyChooseUs() {
   const w = site.whyChooseUs;
 
   return (
+    <ScrollReveal direction="none" duration={0.6}>
     <section className="relative overflow-hidden bg-white pb-8 md:pb-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
-        <div className="max-w-3xl">
+        <ScrollReveal as="div" direction="up" className="max-w-3xl">
           <SectionLabel text={w.badge} />
           <h2 className="mt-1 text-3xl font-bold leading-tight text-[#06194a] sm:text-4xl lg:text-[42px]">
             {w.title.normal} <span className="text-[#0a3a9c]">{w.title.highlighted}</span>
@@ -60,13 +62,17 @@ export default function WhyChooseUs() {
           <p className="mt-1 text-base leading-relaxed text-slate-600">
             {w.desc}
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Cards Grid */}
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {w.items.map((item) => (
-            <article
+          {w.items.map((item, i) => (
+            <ScrollReveal
+              as="article"
               key={item.id}
+              direction="none"
+              index={i}
+              staggerChildren={0.1}
               className="group relative flex flex-col justify-between rounded-2xl bg-white p-7 shadow-[0_4px_25px_rgba(10,47,143,0.06)] border border-slate-100 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_35px_rgba(10,47,143,0.12)]"
             >
               <div>
@@ -88,11 +94,12 @@ export default function WhyChooseUs() {
                   {item.description}
                 </p>
               </div>
-            </article>
+            </ScrollReveal>
           ))}
         </div>
 
       </div>
     </section>
+    </ScrollReveal>
   );
 }

@@ -12,6 +12,7 @@ import {
 } from "react-icons/lu";
 import type { IconType } from "react-icons";
 import { getTestimonials, site } from "@/data";
+import ScrollReveal from "../shared/ScrollReveal";
 
 /* Maps the icon strings used in siteData.json to react-icons */
 const iconMap: Record<string, IconType> = {
@@ -100,6 +101,7 @@ export default function SecurityTestimonial() {
   };
 
   return (
+    <ScrollReveal direction="none" duration={0.6}>
     <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#f3f7ff] to-[#e9f0ff] pb-8 md:pb-12">
 
       <DotPattern className="left-4 top-6 hidden h-28 w-28 sm:block" />
@@ -116,7 +118,7 @@ export default function SecurityTestimonial() {
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
-        <div className="mx-auto max-w-2xl text-center">
+        <ScrollReveal as="div" direction="up" className="mx-auto max-w-2xl text-center">
           <SectionLabel text={t.badge} center />
 
           <h2 className="mt-3 text-3xl font-bold leading-tight text-[#06194a] sm:text-4xl lg:text-[44px]">
@@ -129,10 +131,10 @@ export default function SecurityTestimonial() {
           <p className="mt-2 text-base leading-relaxed text-slate-600 sm:text-base">
             {t.desc}
           </p>
-        </div>
+        </ScrollReveal>
 
         {/*  SLIDER  */}
-        <div className="relative mt-12">
+        <ScrollReveal as="div" direction="up" className="relative mt-12">
 
           {/* Viewport */}
           <div className="overflow-hidden rounded-3xl">
@@ -250,7 +252,7 @@ export default function SecurityTestimonial() {
               </button>
             </>
           )}
-        </div>
+        </ScrollReveal>
 
         {/*  DOTS + MOBILE ARROWS  */}
 
@@ -299,5 +301,6 @@ export default function SecurityTestimonial() {
 
       </div>
     </section>
+    </ScrollReveal>
   );
 }
