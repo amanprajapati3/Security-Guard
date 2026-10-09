@@ -47,10 +47,10 @@
       "Topbar": {
         "variants": {
           "SecurityTopbar1": {
-            "phone": "+91 98765 43210",
-            "phoneHref": "tel:+919876543210",
-            "email": "info@yourcompany.com",
-            "emailHref": "mailto:info@yourcompany.com",
+            "phone": "+1 (123) 456 789",
+            "phoneHref": "tel:+1 (123) 456 789",
+            "email": "info@example.com",
+            "emailHref": "info@example.com",
             "supportText": "24/7 Security Support",
             "supportIcon": "clock"
           }
@@ -1118,7 +1118,7 @@
                       "text": "123 Security Street,"
                     },
                     {
-                      "text": "New Delhi, India"
+                      "text": "New York, USA"
                     }
                   ]
                 },
@@ -1126,8 +1126,8 @@
                   "icon": "phone",
                   "lines": [
                     {
-                      "text": "+91 1234567890",
-                      "href": "tel:+911234567890"
+                      "text": "+1 (123) 456 789",
+                      "href": "tel:+1 (123) 456 789"
                     }
                   ]
                 },
@@ -1641,8 +1641,8 @@
               {
                 "icon": "phone",
                 "label": "Phone Number",
-                "value": "+91 1234567890",
-                "href": "tel:+911234567890"
+                "value": "+1 (123) 456 789",
+                "href": "tel:+1 (123) 456 789"
               },
               {
                 "icon": "mail",
@@ -1653,7 +1653,7 @@
               {
                 "icon": "location",
                 "label": "Location",
-                "value": "123 Secure Street, New Delhi, India",
+                "value": "123 Secure Street, New York, USA",
                 "href": "#"
               }
             ],
