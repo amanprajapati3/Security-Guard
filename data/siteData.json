@@ -47,10 +47,10 @@
       "Topbar": {
         "variants": {
           "SecurityTopbar1": {
-            "phone": "+1 (123) 456 789",
-            "phoneHref": "tel:+1 (123) 456 789",
-            "email": "info@example.com",
-            "emailHref": "info@example.com",
+            "phone": "+1 00000000",
+            "phoneHref": "tel:+1 00000000",
+            "email": "info@xyz.com",
+            "emailHref": "info@xyz.com",
             "supportText": "24/7 Security Support",
             "supportIcon": "clock"
           }
@@ -1126,8 +1126,8 @@
                   "icon": "phone",
                   "lines": [
                     {
-                      "text": "+1 (123) 456 789",
-                      "href": "tel:+1 (123) 456 789"
+                      "text": "+1 00000000",
+                      "href": "tel:+1 00000000"
                     }
                   ]
                 },
@@ -1135,8 +1135,8 @@
                   "icon": "mail",
                   "lines": [
                     {
-                      "text": "info@example.com",
-                      "href": "mailto:info@example.com"
+                      "text": "info@xyz.com",
+                      "href": "mailto:info@xyz.com"
                     }
                   ]
                 },
@@ -1154,9 +1154,9 @@
               ]
             },
             "copyright": {
-              "prefix": "© 2026",
-              "brand": "copyright © 2026 . All rights reserved. ",
-              "suffix": ". Powered by Lestow."
+              "prefix": "© copyright 2026",
+              "brand": "All rights reserved. ",
+              "suffix": "Powered by Lestow."
             },
             "backToTop": true,
             "backToTopLabel": "Back to top"
@@ -1641,14 +1641,14 @@
               {
                 "icon": "phone",
                 "label": "Phone Number",
-                "value": "+1 (123) 456 789",
-                "href": "tel:+1 (123) 456 789"
+                "value": "+1 00000000",
+                "href": "tel:+1 00000000"
               },
               {
                 "icon": "mail",
                 "label": "Email Address",
-                "value": "info@example.com",
-                "href": "mailto:info@example.com"
+                "value": "info@xyz.com",
+                "href": "mailto:info@xyz.com"
               },
               {
                 "icon": "location",
