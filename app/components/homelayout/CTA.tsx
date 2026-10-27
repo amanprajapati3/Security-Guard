@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { LuArrowRight } from "react-icons/lu";
 import { site } from "@/data";
-import ScrollReveal from "../shared/ScrollReveal";
 
 /* Small "—— LABEL ——" eyebrow used above every section heading */
 function SectionLabel({
@@ -39,23 +38,22 @@ export default function SecurityCta() {
   const c = site.cta;
 
   return (
-    <ScrollReveal direction="none" duration={0.6}>
     <section className="relative isolate overflow-hidden bg-[#06194a] text-white">
       <Image
         src={c.bgImage}
         alt=""
         fill
         sizes="100vw"
-        className="-z-20 object-cover object-[75%_center]"
+        className="-z-20 object-cover object-[75%_center] opacity-40 md:opacity-100"
       />
-      {/* Mobile: flat overlay. Desktop: fade from the left */}
-      <div className="absolute inset-0 -z-10 bg-[#06194a] md:hidden" />
+      {/* Mobile: show bg image with dark overlay. Desktop: fade from the left */}
+      <div className="absolute inset-0 -z-10 bg-[#06194a]/80 md:hidden" />
       <div className="absolute inset-0 -z-10 hidden bg-gradient-to-r from-[#06194a] via-[#052658]/80 to-transparent md:block" />
       {/* Yellow diagonal stripe */}
 
       <div className="absolute -right-4 top-0 -z-10 hidden h-full w-16 -skew-x-[20deg] bg-[#fdb913] lg:block xl:right-[6%]" />
-      <div className="absolute hidden md:flex right-10 top-1/2 z-10 h-[300px] w-[300px] -translate-y-1/2">
-        <ScrollReveal as="div" direction="left" className="relative h-full w-full">
+      <div className="absolute right-4 top-1/2 z-10 h-[200px] w-[200px] -translate-y-1/2 md:right-10 md:h-[300px] md:w-[300px]">
+        <div className="relative hidden md:flex h-full w-full">
           <Image
             src={c.image}
             alt="ctaimage"
@@ -63,10 +61,10 @@ export default function SecurityCta() {
             sizes="200px"
             className="object-contain"
           />
-        </ScrollReveal>
+        </div>
       </div>
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 ">
-        <ScrollReveal as="div" direction="right" mobileDirection="up" className="max-w-xl">
+        <div className="max-w-xl">
           <SectionLabel text={c.badge} tone="yellow" />
           <h2 className="mt-1 text-3xl font-bold leading-tight sm:text-4xl lg:text-[42px]">
             {c.title.normal}{" "}
@@ -85,9 +83,8 @@ export default function SecurityCta() {
               <LuArrowRight size={16} />
             </span>
           </Link>
-        </ScrollReveal>
+        </div>
       </div>
     </section>
-    </ScrollReveal>
   );
 }

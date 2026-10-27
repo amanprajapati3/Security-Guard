@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Header from "./components/section/header/Header";
 import Footer from "./components/section/footer/Footer";
@@ -9,18 +9,20 @@ export const metadata: Metadata = {
   description: "Security Service",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={` h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <SmoothScroll/>
-        <Header/>
+    <html lang="en" className="h-full antialiased">
+      <body className="flex min-h-full min-w-0 flex-col">
+        <SmoothScroll />
+        <Header />
         {children}
-        <Footer/>
-        </body>
+        <Footer />
+      </body>
     </html>
   );
 }

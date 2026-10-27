@@ -5,11 +5,12 @@ import {
   LuCctv,
   LuDoorClosed,
   LuFootprints,
-  LuShield,
   LuShieldCheck,
   LuUserCheck,
   LuUsers,
 } from "react-icons/lu";
+import { FaShieldAlt } from "react-icons/fa";
+
 import type { IconType } from "react-icons";
 import { getHomeServices, site } from "@/data";
 import ScrollReveal from "../shared/ScrollReveal";
@@ -75,21 +76,21 @@ export default function SecurityServices() {
 
   return (
     <ScrollReveal direction="none" duration={0.6}>
-    <section className="relative overflow-hidden bg-white py-8 md:py-12">
-      <DotPattern className="left-4 top-10 hidden h-28 w-28 sm:block" />
-      <DotPattern className="right-6 top-28 hidden h-24 w-32 lg:block" />
-      <LuShield
+    <section className="relative overflow-x-hidden bg-white py-8 md:py-12">
+      <DotPattern className="left-4 top-19 hidden h-28 w-28 sm:block" />
+      <DotPattern className="right-6 top-8 hidden h-24 w-32 lg:block" />
+      <FaShieldAlt
         aria-hidden
         strokeWidth={1}
         className="pointer-events-none absolute -right-16 top-24 hidden text-[#e3ebfb] lg:block"
-        size={300}
+        size={200}
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <ScrollReveal as="div" direction="up" className="mx-auto max-w-4xl text-center">
           <SectionLabel text={s.badge} center />
-          <h2 className="mt-3 text-3xl font-bold leading-tight text-[#06194a] sm:text-4xl lg:text-[49px]">
+          <h2 className="mt-3 text-3xl font-bold text-[#06194a] sm:text-4xl lg:text-[49px]">
             {s.title.normal} <span className="text-[#fdb913]">{s.title.highlighted}</span>
             <span className="block">{s.title.postTitle}</span>
           </h2>

@@ -1,5 +1,6 @@
 import AboutSection from "../components/homelayout/AboutSection";
 import SecurityCta from "../components/homelayout/CTA";
+import SecurityTestimonial from "../components/homelayout/TestimonialSection";
 import WhyChooseUs from "../components/layout/choose/Choose";
 import Mission from "../components/layout/mission/Mission";
 import PageBanner from "../components/shared/Banner";
@@ -14,6 +15,7 @@ export default function AboutPage() {
       <AboutSection hideButton />
       <Mission />
       <WhyChooseUs />
+      <SecurityTestimonial/>
       <SecurityCta />
     </>
   );

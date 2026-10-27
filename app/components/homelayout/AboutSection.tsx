@@ -3,17 +3,16 @@ import Link from "next/link";
 import {
   LuArrowRight,
   LuCctv,
-  LuShield,
   LuShieldCheck,
   LuUserCheck,
   LuUsers,
 } from "react-icons/lu";
 import type { IconType } from "react-icons";
 import { site } from "@/data";
-import ScrollReveal from "../shared/ScrollReveal";
+import { GiHealingShield } from "react-icons/gi";
 
 const iconMap: Record<string, IconType> = {
-  shield: LuShield,
+  shield: GiHealingShield,
   "shield-check": LuShieldCheck,
   "user-shield": LuUserCheck,
   cctv: LuCctv,
@@ -22,7 +21,7 @@ const iconMap: Record<string, IconType> = {
 
 function Icon({
   name,
-  size = 10,
+  size = 14,
   className,
 }: {
   name: string;
@@ -51,9 +50,7 @@ function SectionLabel({
 
   return (
     <div
-      className={`flex items-center gap-3 ${
-        center ? "justify-center" : ""
-      }`}
+      className={`flex items-center gap-3 ${center ? "justify-center" : ""}`}
     >
       <span className="h-0.5 w-8 bg-[#fdb913] sm:w-10" />
 
@@ -62,8 +59,6 @@ function SectionLabel({
       >
         {text}
       </span>
-
-      {center && <span className="h-0.5 w-8 bg-[#fdb913] sm:w-10" />}
     </div>
   );
 }
@@ -84,46 +79,51 @@ const boxStyles = [
   "bg-[#06194a] text-white",
 ];
 
-export default function SecurityAbout({ hideButton = false }: { hideButton?: boolean }) {
+export default function SecurityAbout({
+  hideButton = false,
+  hideExperienceBadge = false,
+}: {
+  hideButton?: boolean;
+  hideExperienceBadge?: boolean;
+}) {
   const a = site.about;
 
   return (
-    <ScrollReveal direction="none" duration={0.6}>
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#f3f7ff] to-[#e9f0ff] py-8 md:py-12">
-      <DotPattern className="right-4 top-6 hidden h-28 w-28 sm:block" />
-      <DotPattern className="bottom-4 left-4 hidden h-24 w-24 sm:block" />
-
+    <section className="relative overflow-hidden bg-white py-8 md:py-12">
       <div className="relative mx-auto flex max-w-7xl flex-col gap-12 px-4 sm:px-6 lg:grid lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 lg:px-8">
         {/* Content */}
-        <ScrollReveal as="div" direction="left" mobileDirection="up" className="relative order-1 flex flex-col items-center text-center lg:order-2 lg:items-start lg:text-left">
+        <div className="relative order-1 flex flex-col items-center text-center lg:order-2 lg:items-start lg:text-left">
           {/* Experience badge - desktop */}
-          <div className="absolute right-0 top-0 hidden items-center gap-3 rounded-xl border-b-4 border-[#fdb913] bg-[#06194a] px-4 py-3 text-left text-white shadow-lg lg:flex">
-            <Icon
-              name={a.experienceBadge.icon}
-              size={34}
-              className="text-[#fdb913]"
-            />
+          {!hideExperienceBadge && (
+            <div className="absolute right-0 top-0 hidden items-center gap-3 rounded-xl  bg-[#06234a] px-4 py-3 text-left text-white shadow-lg lg:flex">
+              <Icon
+                name={a.experienceBadge.icon}
+                size={45}
+                className="text-[#fdb913]"
+              />
 
-            <div>
-              <div className="text-2xl font-bold leading-none text-[#fdb913] lg:text-4xl">
-                {a.experienceBadge.number}
-                <span className="text-[#fdb913]">
-                  {a.experienceBadge.suffix}
-                </span>
-              </div>
+              <div>
+                <div className="text-2xl font-bold leading-none text-[#fdb913] lg:text-4xl">
+                  {a.experienceBadge.number}
+                  <span className="text-[#fdb913]">
+                    {a.experienceBadge.suffix}
+                  </span>
+                </div>
 
-              <div className="mt-1 text-[13px] text-white/80">
-                {a.experienceBadge.label}
+                <div className="mt-1 text-[12px] text-white">
+                  {a.experienceBadge.label}
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
           <SectionLabel text={a.badge} tone="yellow" center />
 
-          <h2 className="mt-3 text-3xl font-extrabold text-[#06194a] sm:text-4xl lg:text-left lg:text-[50px]">
+          <h2 className="mt-3 text-3xl font-extrabold text-[#062850] sm:text-4xl lg:text-left lg:text-[45px]">
             {a.title.normal}
-            <span className="block text-[#fdb913]">
+            <span className="flex gap-2 text-[#fdb913]">
               {a.title.highlighted}
+              <span className="block text-[#062850]">{a.title.normal2}</span>
             </span>
           </h2>
 
@@ -138,24 +138,29 @@ export default function SecurityAbout({ hideButton = false }: { hideButton?: boo
 
           {/* Feature cards */}
           <div className="mt-8 grid w-full max-w-3xl gap-4 sm:grid-cols-2">
-            {a.features.map((f, i) => (
-              <ScrollReveal
-                as="div"
-                key={f.id}
-                direction="none"
-                index={i}
-                staggerChildren={0.08}
-                className="flex items-start gap-3 rounded-xl border border-slate-100 bg-white p-4 text-left shadow-[0_6px_24px_rgba(10,47,143,0.08)] transition-transform duration-300 hover:-translate-y-1"
-              >
+            {a.features.map((f, i) => {
+              const boxStyle = boxStyles[i % boxStyles.length];
+              const isYellowBox = boxStyle.includes("bg-[#fdb913]");
+              return (
                 <div
-                  className={`relative flex h-16 w-16 shrink-0 items-center justify-center rounded-lg ${boxStyles[i % boxStyles.length]}`}
+                  key={f.id}
+                  className="flex items-start gap-3 rounded-xl border border-slate-100 bg-white p-4 text-left shadow-[0_6px_24px_rgba(10,47,143,0.08)] transition-transform duration-300 hover:-translate-y-1"
                 >
-                  <Icon name={f.icon} size={34} />
+                  <div
+                    className={`relative flex h-16 w-16 shrink-0 items-center justify-center rounded-lg ${boxStyle}`}
+                  >
+                    <Icon name={f.icon} size={34} />
 
-                  <span className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-[#fdb913] text-[12px] font-bold text-[#06194a]">
-                    {f.number}
-                  </span>
-                </div>
+                    <span
+                      className={`absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full text-[12px] font-bold ${
+                        isYellowBox
+                          ? "bg-[#06194a] text-white"
+                          : "bg-[#fdb913] text-[#06194a]"
+                      }`}
+                    >
+                      {f.number}
+                    </span>
+                  </div>
 
                 <div>
                   <h3 className="text-base font-bold leading-snug text-[#06194a]">
@@ -166,8 +171,9 @@ export default function SecurityAbout({ hideButton = false }: { hideButton?: boo
                     {f.description}
                   </p>
                 </div>
-              </ScrollReveal>
-            ))}
+              </div>
+              );
+            })}
           </div>
 
           {!hideButton && (
@@ -182,39 +188,42 @@ export default function SecurityAbout({ hideButton = false }: { hideButton?: boo
               </span>
             </Link>
           )}
-        </ScrollReveal>
+        </div>
 
         {/* Image */}
-        <ScrollReveal as="div" direction="right" mobileDirection="up" className="relative order-2 mx-auto w-full max-w-md lg:order-1 lg:max-w-none">
+        <div className="relative order-2 mx-auto w-full max-w-md lg:order-1 lg:max-w-none">
           {/* Experience badge - mobile/tablet */}
-          <div className="absolute -right-2 -top-5 z-20 flex items-center gap-3 rounded-xl border-b-4 border-[#fdb913] bg-[#06194a] px-4 py-3 text-left text-white shadow-lg sm:-right-3 sm:-top-6 lg:hidden">
-            <Icon
-              name={a.experienceBadge.icon}
-              size={34}
-              className="text-[#fdb913]"
-            />
+          {!hideExperienceBadge && (
+            <div className="absolute -right-2 -top-5 z-20 flex items-center gap-3 rounded-xl border-b-4 border-[#fdb913] bg-[#06194a] px-4 py-3 text-left text-white shadow-lg sm:-right-3 sm:-top-6 lg:hidden">
+              <Icon
+                name={a.experienceBadge.icon}
+                size={34}
+                className="text-[#fdb913]"
+              />
 
-            <div>
-              <div className="text-2xl font-bold leading-none text-[#fdb913]">
-                {a.experienceBadge.number}
-                <span className="text-[#fdb913]">
-                  {a.experienceBadge.suffix}
-                </span>
-              </div>
+              <div>
+                <div className="text-2xl font-bold leading-none text-[#fdb913]">
+                  {a.experienceBadge.number}
+                  <span className="text-[#fdb913]">
+                    {a.experienceBadge.suffix}
+                  </span>
+                </div>
 
-              <div className="mt-1 text-[13px] text-white/80">
-                {a.experienceBadge.label}
+                <div className="mt-1 text-[13px] text-white">
+                  {a.experienceBadge.label}
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
           {/* Yellow/Navy image decorations */}
           <div className="absolute -right-5 top-8 hidden h-[70%] w-full rotate-6 rounded-3xl bg-gradient-to-r from-[#031941] via-[#fdb913] to-[#fdb913] sm:block sm:right-0" />
 
           <div className="absolute -top-3 left-4 hidden h-[42%] w-1/2 -rotate-6 rounded-3xl bg-[#073b66] sm:block sm:-bottom-9 sm:left-5" />
-
+          <DotPattern className="right-0 top-6 hidden h-28 w-28 sm:block" />
+          <DotPattern className="bottom-0 left-4 hidden h-24 w-24 sm:block" />
           {/* Image */}
-          <div className="relative h-[300px] overflow-hidden rounded-3xl border-4 border-white shadow-xl sm:h-[500px]">
+          <div className="relative h-[300px]  overflow-hidden rounded-3xl border-4 border-white shadow-xl sm:h-[500px]">
             <Image
               src={a.image.src}
               alt={a.image.alt}
@@ -223,9 +232,8 @@ export default function SecurityAbout({ hideButton = false }: { hideButton?: boo
               className="object-cover"
             />
           </div>
-        </ScrollReveal>
+        </div>
       </div>
     </section>
-    </ScrollReveal>
   );
 }

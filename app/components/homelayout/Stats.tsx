@@ -99,7 +99,7 @@ export default function SecurityStats() {
 
   return (
     <ScrollReveal direction="none" duration={0.6}>
-    <section className="relative isolate overflow-hidden py-8 md:py-12 my-12 text-white ">
+    <section className="relative isolate overflow-x-hidden mt-0.5  py-8 md:py-12 my-12 text-white ">
       <Image
         src={s.bgImage}
         alt=""

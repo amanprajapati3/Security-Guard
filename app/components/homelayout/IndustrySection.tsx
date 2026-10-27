@@ -6,7 +6,6 @@ import { useEffect, useRef, useState } from "react";
 import { LuArrowLeft, LuArrowRight, LuBuilding2, LuCalendar, LuCheck, LuFactory, LuHotel, LuHouse, LuLandmark, LuPlane, LuSchool, LuShoppingBag, LuStethoscope, LuTruck, LuWarehouse } from "react-icons/lu";
 import type { IconType } from "react-icons";
 import { getIndustries, site } from "@/data";
-import ScrollReveal from "../shared/ScrollReveal";
 
 const iconMap: Record<string, IconType> = { check: LuCheck, building: LuBuilding2, home: LuHouse, factory: LuFactory, hospital: LuStethoscope, school: LuSchool, "shopping-bag": LuShoppingBag, hotel: LuHotel, landmark: LuLandmark, truck: LuTruck, calendar: LuCalendar, plane: LuPlane, warehouse: LuWarehouse };
 
@@ -75,11 +74,10 @@ export default function SecurityIndustries() {
   const atEnd = currentPage === totalPages - 1;
 
   return (
-    <ScrollReveal direction="none" duration={0.6}>
-    <section className="relative isolate overflow-hidden bg-[#06194a] py-16 sm:py-20 lg:bg-white lg:py-24">
+    <section className="relative isolate overflow-x-hidden mt-8  bg-[#062b4a] py-16 sm:py-20 lg:bg-white lg:py-24">
       {/* Mobile + tablet background (< lg) */}
       <div aria-hidden className="pointer-events-none absolute inset-0 z-0 lg:hidden">
-        <div className="absolute inset-0 bg-[#06194a]" />
+        <div className="absolute inset-0 bg-[#062b4a]" />
         <div className="absolute bottom-0 left-0 h-[220px] w-full bg-[#0a3a9c]" style={{ clipPath: "polygon(0 55%, 18% 45%, 38% 30%, 58% 18%, 78% 8%, 100% 0, 100% 100%, 0 100%)" }} />
         <div className="absolute bottom-0 left-0 h-[45%] w-[70%] opacity-30" style={{ background: "radial-gradient(circle at 50% 70%, rgba(22,91,180,0.9), transparent 70%)" }} />
       </div>
@@ -93,7 +91,7 @@ export default function SecurityIndustries() {
       {/* Content */}
       <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[340px_minmax(0,1fr)] lg:gap-12 lg:px-8">
         {/* Left content */}
-        <ScrollReveal as="div" direction="right" mobileDirection="up" className="text-center lg:text-left">
+        <div className="text-center lg:text-left">
           <SectionLabel text={d.badge} tone="yellow" center />
           <h2 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-left lg:text-[38px]">
             {d.title.normal}
@@ -104,12 +102,12 @@ export default function SecurityIndustries() {
 
           <ul className="mx-auto mt-5 w-fit space-y-2.5 text-left text-white lg:mx-0">
             {d.features.map((f, i) => (
-              <ScrollReveal as="li" key={f.id} index={i} staggerChildren={0.08} className="flex items-center gap-3 text-sm font-medium">
+              <li key={f.id} className="flex items-center gap-3 text-sm font-medium">
                 <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#fdb913] text-[#06194a]">
                   <Icon name="check" size={12} strokeWidth={3.5} />
                 </span>
                 {f.title}
-              </ScrollReveal>
+              </li>
             ))}
           </ul>
 
@@ -119,13 +117,13 @@ export default function SecurityIndustries() {
               <LuArrowRight size={16} />
             </span>
           </Link>
-        </ScrollReveal>
+        </div>
 
         {/* Cards */}
         <div className="min-w-0">
           <div ref={track} onScroll={updatePage} className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {items.map((it, i) => (
-              <ScrollReveal as="article" key={it.id} index={i} staggerChildren={0.08} className="group w-full shrink-0 snap-start overflow-hidden rounded-xl bg-white text-[#06194a] shadow-xl sm:w-[calc((100%-16px)/2)] md:w-[calc((100%-32px)/3)] lg:w-[calc((100%-48px)/4)]">
+              <article key={it.id} className="group w-full shrink-0 snap-start overflow-hidden rounded-xl bg-white text-[#06194a] shadow-xl sm:w-[calc((100%-16px)/2)] md:w-[calc((100%-32px)/3)] lg:w-[calc((100%-48px)/4)]">
                 <div className="relative h-44 overflow-hidden sm:h-52 lg:h-48">
                   <Image src={it.image} alt={it.title} fill sizes="(max-width: 639px) 90vw, (max-width: 767px) 45vw, (max-width: 1023px) 30vw, 20vw" className="object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
@@ -136,21 +134,21 @@ export default function SecurityIndustries() {
                   <h3 className="mr-10 mt-2 text-[17px] font-bold leading-snug">{it.title}</h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-slate-500">{it.description}</p>
                 </div>
-              </ScrollReveal>
+              </article>
             ))}
           </div>
 
-          {/* Pagination dots (centered) + arrows (right) */}
+          {/* Pagination dots (centered) + arrows */}
           <div className="relative mt-5 flex items-center justify-center">
             {totalPages > 1 && (
-              <div className="flex items-center gap-2">
+              <div className="hidden items-center gap-2 sm:flex">
                 {Array.from({ length: totalPages }).map((_, i) => (
                   <button key={i} type="button" aria-label={`Go to page ${i + 1}`} onClick={() => scrollToPage(i)} className={`h-2 rounded-full transition-all duration-300 ${i === currentPage ? "w-6 bg-[#fdb913]" : "w-2 bg-gray-200"}`} />
                 ))}
               </div>
             )}
 
-            <div className="absolute right-0 hidden gap-3 sm:flex">
+            <div className="flex gap-3 sm:absolute sm:right-0">
               <button type="button" onClick={() => scrollDir(-1)} disabled={atStart} aria-label="Previous" className={arrowBtn}>
                 <LuArrowLeft size={18} />
               </button>
@@ -162,6 +160,5 @@ export default function SecurityIndustries() {
         </div>
       </div>
     </section>
-    </ScrollReveal>
   );
 }

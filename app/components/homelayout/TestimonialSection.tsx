@@ -7,16 +7,17 @@ import {
   LuArrowRight,
   LuBuilding2,
   LuQuote,
-  LuShield,
   LuStar,
 } from "react-icons/lu";
+import { FaShieldAlt } from "react-icons/fa";
+
 import type { IconType } from "react-icons";
 import { getTestimonials, site } from "@/data";
 import ScrollReveal from "../shared/ScrollReveal";
 
 /* Maps the icon strings used in siteData.json to react-icons */
 const iconMap: Record<string, IconType> = {
-  shield: LuShield,
+  shield: FaShieldAlt,
   building: LuBuilding2,
 };
 
@@ -31,7 +32,7 @@ function Icon({
   className?: string;
   strokeWidth?: number;
 }) {
-  const Cmp = iconMap[name] ?? LuShield;
+  const Cmp = iconMap[name] ?? FaShieldAlt;
 
   return (
     <Cmp
@@ -102,7 +103,7 @@ export default function SecurityTestimonial() {
 
   return (
     <ScrollReveal direction="none" duration={0.6}>
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#f3f7ff] to-[#e9f0ff] pb-8 md:pb-12">
+    <section className="relative overflow-x-hidden bg-gradient-to-b from-white via-[#f3f7ff] to-[#e9f0ff] pb-8 md:pb-12">
 
       <DotPattern className="left-4 top-6 hidden h-28 w-28 sm:block" />
 
@@ -110,9 +111,9 @@ export default function SecurityTestimonial() {
 
       <Icon
         name="shield"
-        size={280}
+        size={150}
         strokeWidth={1}
-        className="pointer-events-none absolute -right-10 top-10 hidden text-[#dce7fb] lg:block"
+        className="pointer-events-none absolute right-10  hidden lg:block text-[#dce7fb]"
       />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -137,11 +138,11 @@ export default function SecurityTestimonial() {
         <ScrollReveal as="div" direction="up" className="relative mt-12">
 
           {/* Viewport */}
-          <div className="overflow-hidden rounded-3xl">
+          <div className="w-full overflow-hidden rounded-3xl">
 
             {/* Sliding Track */}
             <div
-              className="flex transition-transform duration-500 ease-in-out"
+              className="flex w-full transition-transform duration-500 ease-in-out"
               style={{
                 transform: `translateX(-${active * 100}%)`,
               }}
@@ -150,9 +151,9 @@ export default function SecurityTestimonial() {
               {items.map((it) => (
                 <article
                   key={it.id}
-                  className="w-full shrink-0"
+                  className="min-w-full w-full shrink-0 basis-full"
                 >
-                  <div className="grid items-center gap-6 rounded-3xl bg-white p-4 shadow-[0_20px_60px_rgba(10,47,143,0.15)] sm:p-6 md:grid-cols-[300px_1fr] md:gap-10 lg:grid-cols-[340px_1fr]">
+                  <div className="grid items-center gap-6 rounded-3xl bg-white p-4 shadow-[0_20px_60px_rgba(10,47,143,0.15)] sm:p-6 md:grid-cols-[300px_1fr] md:gap-10 lg:grid-cols-[340px_1fr] overflow-hidden">
 
                     {/* Photo */}
                     <div className="relative mx-auto w-full  max-w-xs lg:max-w-[500px]">
@@ -175,12 +176,12 @@ export default function SecurityTestimonial() {
 
                       <LuQuote
                         aria-hidden
-                        size={52}
-                        className="absolute right-0 top-0 hidden fill-[#9db1da] text-[#9db1da] md:block"
+                        size={62}
+                        className="absolute right-0 top-0 hidden fill-[#e2e8f3] text-[#e2e8f3] md:block"
                       />
 
                       {/* Stars */}
-                      {/* <div className="flex gap-1">
+                      <div className="flex gap-1">
                         {Array.from({ length: it.rating }).map((_, k) => (
                           <LuStar
                             key={k}
@@ -188,10 +189,10 @@ export default function SecurityTestimonial() {
                             className="fill-[#fdb913] text-[#fdb913]"
                           />
                         ))}
-                      </div> */}
+                      </div>
 
                       {/* Quote */}
-                      <p className="mt-4 text-sm leading-relaxed text-slate-800 sm:text-base md:pr-12">
+                      <p className="mt-4 text-sm leading-relaxed text-slate-800 sm:text-base  min-h-[190px] sm:min-h-0 md:pr-12">
                         {it.quote}
                       </p>
 
@@ -237,7 +238,7 @@ export default function SecurityTestimonial() {
                 type="button"
                 onClick={() => go(active - 1)}
                 aria-label="Previous testimonial"
-                className="absolute -left-15 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#06194a] shadow-lg transition-all duration-300 hover:bg-[#fdb913] md:flex"
+                className="absolute -left-15 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#06194a] shadow-lg overflow-hidden transition-colors duration-300 hover:bg-[#fdb913] md:flex"
               >
                 <LuArrowLeft size={20} />
               </button>
@@ -246,7 +247,7 @@ export default function SecurityTestimonial() {
                 type="button"
                 onClick={() => go(active + 1)}
                 aria-label="Next testimonial"
-                className="absolute -right-15 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-[#0a3a9c] text-white shadow-lg transition-all duration-300 hover:bg-[#fdb913] hover:text-[#06194a] md:flex"
+                className="absolute -right-15 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-[#0a3a9c] text-white shadow-lg overflow-hidden transition-colors duration-300 hover:bg-[#fdb913] hover:text-[#06194a] md:flex"
               >
                 <LuArrowRight size={20} />
               </button>

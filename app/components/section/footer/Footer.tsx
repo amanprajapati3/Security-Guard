@@ -3,48 +3,29 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ArrowUp,
   ChevronRight,
-  Clock,
-  Mail,
-  MapPin,
-  Phone,
 } from "lucide-react";
 import type { ReactNode } from "react";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
+import { GoClockFill } from "react-icons/go";
+import { IoMail } from "react-icons/io5";
+
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { site } from "@/data";
 
-/* Inline brand icons (no dependency on lucide brand icons) */
 const socialIcons: Record<string, ReactNode> = {
-  facebook: (
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-  ),
-  instagram: (
-    <>
-      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-    </>
-  ),
-  linkedin: (
-    <>
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-      <rect width="4" height="12" x="2" y="9" />
-      <circle cx="4" cy="4" r="2" />
-    </>
-  ),
-  youtube: (
-    <>
-      <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
-      <path d="m10 15 5-3-5-3z" />
-    </>
-  ),
+  facebook: <FaFacebookF size={16} />,
+  instagram: <FaInstagram size={16} />,
+  linkedin: <FaLinkedinIn size={16} />,
+  youtube: <FaYoutube size={16} />,
 };
 
 const contactIcons: Record<string, ReactNode> = {
-  "map-pin": <MapPin size={16} />,
-  phone: <Phone size={16} />,
-  mail: <Mail size={16} />,
-  clock: <Clock size={16} />,
+  "map-pin": <FaMapMarkerAlt size={16} />,
+  phone: <FaPhoneAlt size={16} />,
+  mail: <IoMail size={16} />,
+  clock: <GoClockFill size={16} />,
 };
 
 export default function SecurityFooter() {
@@ -60,44 +41,41 @@ export default function SecurityFooter() {
       <div className="absolute -left-24 -top-24 -z-10 h-72 w-72 rounded-full bg-[#fdb913]/10 blur-3xl" />
 
       {/* Main grid */}
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-6 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.4fr]">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-6 sm:grid-cols-2 lg:grid-cols-[1.3fr_auto_1.4fr]">
         {/* Brand */}
-        <div>
+        <div className="sm:border-r sm:border-r-[#033044]">
           <Link href="/" aria-label={footer.logoAlt}>
             <Image
               src="/logo.png"
               alt={footer.logoAlt}
               width={200}
               height={60}
-              className="h-14 w-auto md:h-24"
+              className="h-14 w-auto sm:h-16 lg:h-20"
             />
           </Link>
-          <p className="mt-0 max-w-xs text-sm leading-relaxed text-white">
+          <p className="mt-0 max-w-[260px] text-sm leading-relaxed text-white">
             {footer.desc}
           </p>
         </div>
 
         {/* Link columns */}
-        {footer.columns.map((col) => (
-          <div key={col.title}>
-            <h3 className="relative mb-5 pb-3 text-lg font-bold after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-10 after:bg-[#fdb913]">
-              {col.title}
-            </h3>
-            <ul className="space-y-2.5">
-              {col.links.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="group flex items-center gap-1.5 text-sm text-white transition-all duration-300 hover:translate-x-1 hover:text-[#fdb913]"
-                  >
-                    <ChevronRight size={14} className="text-[#fdb913]" />
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+        <div className="lg:justify-self-center">
+          <h3 className="relative mb-5 pb-3 text-lg font-bold after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-10 after:bg-[#fdb913]">
+            {footer.columns.length === 2 ? "Useful Links" : footer.columns[0]?.title}
+          </h3>
+          <div className="grid grid-cols-2 gap-x-8 gap-y-2.5">
+            {footer.columns.flatMap((col) => col.links).map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="group flex items-center gap-1.5 text-sm text-white transition-all duration-300 hover:translate-x-1 hover:text-[#fdb913]"
+              >
+                <ChevronRight size={14} className="text-[#fdb913]" />
+                {link.label}
+              </Link>
+            ))}
           </div>
-        ))}
+        </div>
 
         {/* Contact */}
         <div>
@@ -140,20 +118,9 @@ export default function SecurityFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="flex h-9 w-9 items-center justify-center rounded-full  text-white border border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:bg-[#fdb913] hover:text-[#06194a]"
+                className="flex h-9 w-9 items-center justify-center rounded-full text-white border border-blue-500 transition-all duration-300 hover:-translate-y-1 hover:bg-[#fdb913] hover:text-[#06194a]"
               >
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  {socialIcons[s.label]}
-                </svg>
+                {socialIcons[s.label] || null}
               </a>
             ))}
           </div>
@@ -161,8 +128,8 @@ export default function SecurityFooter() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/10 bg-[#031244]">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-4 text-xs text-white/80 sm:flex-row sm:text-[13px]">
+      <div className="border-t border-white/10 bg-[#08244e]">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-6 text-sm text-white/80 sm:flex-row sm:text-[15px]">
           <p>
             {footer.copyright.prefix} {footer.copyright.brand}
             {footer.copyright.suffix}

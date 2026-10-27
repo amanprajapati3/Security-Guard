@@ -121,7 +121,7 @@ export default function Team() {
               {d.heading.badge}
             </span>
           </div>
-          <h2 className="mt-3 text-3xl font-bold leading-tight text-[#06194a] sm:text-4xl lg:text-[49px]">
+          <h2 className="mt-0 text-3xl font-bold leading-tight text-[#06194a] sm:text-4xl lg:text-[49px]">
             {d.heading.title.split(" ").slice(0, -2).join(" ")}{" "}
             <span className="text-[#fdb913]">
               {d.heading.title.split(" ").slice(-2).join(" ")}

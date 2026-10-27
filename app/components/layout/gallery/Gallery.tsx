@@ -195,7 +195,7 @@ export default function Gallery() {
               event.stopPropagation();
               step(-1);
             }}
-            className="absolute left-2 cursor-pointer top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-[#06194a]/70 text-white backdrop-blur transition-colors duration-300 hover:bg-[#fdb913] hover:text-[#06194a] sm:left-6 sm:h-12 sm:w-12"
+            className="absolute left-2 cursor-pointer top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-[#06194a]/70 text-white backdrop-blur overflow-hidden transition-all duration-300 hover:bg-[#fdb913] hover:text-[#06194a] sm:left-6 sm:h-12 sm:w-12"
           >
             <LuChevronLeft size={26} />
           </button>
@@ -207,7 +207,7 @@ export default function Gallery() {
               event.stopPropagation();
               step(1);
             }}
-            className="absolute right-2 cursor-pointer top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-[#06194a]/70 text-white backdrop-blur transition-colors duration-300 hover:bg-[#fdb913] hover:text-[#06194a] sm:right-6 sm:h-12 sm:w-12"
+            className="absolute right-2 cursor-pointer top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-[#06194a]/70 text-white backdrop-blur overflow-hidden transition-all duration-300 hover:bg-[#fdb913] hover:text-[#06194a] sm:right-6 sm:h-12 sm:w-12"
           >
             <LuChevronRight size={26} />
           </button>

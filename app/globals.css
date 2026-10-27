@@ -1,21 +1,17 @@
 @import "tailwindcss";
 @import "lenis/dist/lenis.css";
 
-/* ---------- Corner-fill hover for action buttons ----------
-   The ::before layer slides in diagonally from a top corner,
-   reversing the button colors:
-   --btn-fill  = color the fill slides in with (the button's text color)
-   --btn-hover = text color while hovered (the button's original background)
-*/
+/* Corner-fill hover for action buttons (Slide-out method to eliminate edge leaks) */
 .btn-fill-tr,
 .btn-fill-tl {
   position: relative;
   z-index: 0;
   overflow: hidden;
   isolation: isolate;
+  background-color: #06194a; /* Final background color */
+  color: #06194a; /* Initial text color */
   transition:
     color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    background-color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
     transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -25,13 +21,10 @@
   content: "";
   position: absolute;
   z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: -1px;
   border-radius: inherit;
-  background: var(--btn-fill, currentColor);
-  transform: translate(var(--btn-x, 102%), -102%);
+  background: var(--btn-initial, #fdb913); /* Initial background color */
+  transform: translate(0, 0); /* Starts covering the button */
   transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
 }
@@ -48,13 +41,13 @@
 .btn-fill-tl:hover,
 .btn-fill-tr:focus-visible,
 .btn-fill-tl:focus-visible {
-  color: var(--btn-hover, #ffffff);
+  color: var(--btn-hover, #fdb913); /* Final text color */
 }
 
+/* Slide OUT on hover */
 .btn-fill-tr:hover::before,
 .btn-fill-tl:hover::before,
 .btn-fill-tr:focus-visible::before,
 .btn-fill-tl:focus-visible::before {
-  transform: translate(0, 0);
+  transform: translate(var(--btn-x), -102%);
 }
-

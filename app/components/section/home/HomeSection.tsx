@@ -10,7 +10,7 @@ export default function HomeSection(){
     return(
         <>
         <SecurityBanner/>
-        <SecurityAbout/>
+        <SecurityAbout hideExperienceBadge />
         <SecurityServices/>
         <SecurityIndustries/>
         <SecurityStats/>

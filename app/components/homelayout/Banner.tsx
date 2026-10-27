@@ -52,7 +52,7 @@ export default function SecurityBanner() {
   return (
     <ScrollReveal direction="up">
     <section
-      className="relative isolate w-full overflow-hidden bg-[#06194a] text-white"
+      className="relative isolate w-full overflow-x-hidden bg-[#06194a] text-white"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onTouchStart={(e) => {
@@ -144,7 +144,7 @@ export default function SecurityBanner() {
                         <Link
                           key={btn.label}
                           href={btn.href}
-                          className="btn-fill-tl [--btn-fill:#ffffff] [--btn-hover:#06194a] inline-flex items-center rounded-full border px-7 py-3.5 text-sm font-bold text-white sm:text-base"
+                          className="btn-fill-tr [--btn-fill:#06194a] [--btn-hover:#fdb913] inline-flex items-center gap-3 rounded-full bg-[#fdb913] py-3.5 px-8 text-sm font-bold text-[#06194a] shadow-lg sm:text-base"
                         >
                           {btn.label}
                         </Link>
@@ -164,7 +164,7 @@ export default function SecurityBanner() {
             type="button"
             onClick={() => go(active - 1)}
             aria-label="Previous slide"
-            className="absolute left-3 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/30 bg-[#06194a]/70 text-white backdrop-blur transition-colors hover:bg-[#fdb913] hover:text-[#06194a] sm:flex lg:left-6"
+            className="absolute left-3 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/30 bg-[#06194a]/70 text-white backdrop-blur transition-all duration-300 hover:bg-[#fdb913] hover:text-[#06194a] sm:flex lg:left-6"
           >
             <LuChevronLeft size={22} />
           </button>
@@ -173,7 +173,7 @@ export default function SecurityBanner() {
             type="button"
             onClick={() => go(active + 1)}
             aria-label="Next slide"
-            className="absolute right-3 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/30 bg-[#06194a]/70 text-white backdrop-blur transition-colors hover:bg-[#fdb913] hover:text-[#06194a] sm:flex lg:right-6"
+            className="absolute right-3 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/30 bg-[#06194a]/70 text-white backdrop-blur transition-all duration-300 hover:bg-[#fdb913] hover:text-[#06194a] sm:flex lg:right-6"
           >
             <LuChevronRight size={22} />
           </button>

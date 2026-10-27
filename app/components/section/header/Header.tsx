@@ -84,7 +84,7 @@ export default function SecurityHeader() {
           </div>
         </div>
 
-        {/* ───────── Header (transparent, turns navy when scrolled) ───────── */}
+        {/*  Header (transparent, turns navy when scrolled)  */}
         <header
           className={`z-50 w-full transition-all duration-300 ${
             scrolled

@@ -353,7 +353,8 @@
             "badge": "ABOUT US",
             "title": {
               "normal": "Your Trusted",
-              "highlighted": "Security Partner"
+              "highlighted": "Security ",
+              "normal2": "Partner"
             },
             "paragraphs": [
               "We are a professional security guard service provider committed to delivering reliable, trained and trustworthy security solutions. Our focus is on safety, discipline and customer satisfaction, ensuring a secure environment for homes, offices, industries and events."
