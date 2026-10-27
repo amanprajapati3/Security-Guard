@@ -14,7 +14,6 @@ import {
 } from "react-icons/lu";
 import type { IconType } from "react-icons";
 import { site } from "@/data";
-import ScrollReveal from "../../shared/ScrollReveal";
 
 /* Maps icon strings to react-icons */
 const iconMap: Record<string, IconType> = {
@@ -59,26 +58,25 @@ export default function ContactPage() {
     <div className="min-h-screen bg-white">
       
       {/* Main Contact Section */}
-      <ScrollReveal direction="none" duration={0.6}>
       <section className="relative overflow-hidden bg-white py-8 md:py-12">
-        {/* Top-Right Blue Dot Grid — 5 × 5 */}{" "}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute right-6 top-1 grid grid-cols-5 gap-2 sm:right-10"
-      >
-        {" "}
-        {Array.from({ length: 25 }).map((_, index) => (
-          <span
-            key={index}
-            className="h-1.5 w-1.5 rounded-full bg-[#06194a]/40"
-          />
-        ))}{" "}
-      </div>
+        {/* Top-Right Blue Dot Grid — 5 × 5 */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute right-6 top-1 grid grid-cols-5 gap-2 sm:right-10"
+        >
+          {Array.from({ length: 25 }).map((_, index) => (
+            <span
+              key={index}
+              className="h-1.5 w-1.5 rounded-full bg-[#06194a]/40"
+            />
+          ))}
+        </div>
+
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Top Row: Intro Content & Info Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-9">
             {/* Left Column: Heading, Description & Socials */}
-            <ScrollReveal as="div" direction="right" mobileDirection="up" className="lg:col-span-5">
+            <div className="lg:col-span-5">
               <SectionLabel text={c.badge} />
               <h2 className="mt-1 text-3xl font-bold leading-tight text-[#06194a] sm:text-4xl lg:text-[49px]">
                 {c.title.normal}{" "}
@@ -101,19 +99,15 @@ export default function ContactPage() {
                   </a>
                 ))}
               </div>
-            </ScrollReveal>
+            </div>
 
             {/* Right Column: Info Cards Grid */}
             <div className="lg:col-span-7 z-20 grid gap-4 sm:grid-cols-2">
               {c.infoCards.map((card, idx) => {
                 const isLocation = card.icon === "location";
                 return (
-                  <ScrollReveal
-                    as="div"
+                  <div
                     key={idx}
-                    direction="up"
-                    index={idx}
-                    staggerChildren={0.1}
                     className={`flex items-center gap-4 p-6 rounded-2xl bg-white border border-slate-100 shadow-[0_4px_25px_rgba(10,47,143,0.06)] transition-all duration-300 hover:shadow-[0_12px_35px_rgba(10,47,143,0.12)] ${
                       isLocation ? "sm:col-span-2" : ""
                     }`}
@@ -129,7 +123,7 @@ export default function ContactPage() {
                         {card.value}
                       </p>
                     </div>
-                  </ScrollReveal>
+                  </div>
                 );
               })}
             </div>
@@ -137,8 +131,8 @@ export default function ContactPage() {
 
           {/* Bottom Row: Google Map & Message Form */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            {/* Left Column: Google Map Embed */}
-            <ScrollReveal as="div" direction="right" mobileDirection="up" className="lg:col-span-6 overflow-hidden rounded-2xl shadow-[0_8px_30px_rgba(10,47,143,0.08)] border border-slate-100 min-h-[420px]">
+            {/* Left Column (Desktop) / Bottom (Mobile): Google Map Embed */}
+            <div className="order-2 lg:order-1 lg:col-span-6 overflow-hidden rounded-2xl shadow-[0_8px_30px_rgba(10,47,143,0.08)] border border-slate-100 min-h-[420px]">
               <iframe
                 title="Google Map Location"
                 src={c.mapEmbedUrl}
@@ -149,10 +143,10 @@ export default function ContactPage() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
-            </ScrollReveal>
+            </div>
 
-            {/* Right Column: Send Us Message Form */}
-            <ScrollReveal as="div" direction="left" mobileDirection="up" className="lg:col-span-6 rounded-2xl bg-white p-6 sm:p-8 shadow-[0_8px_30px_rgba(10,47,143,0.08)] border border-slate-100 flex flex-col justify-between">
+            {/* Right Column (Desktop) / Top (Mobile): Send Us Message Form */}
+            <div className="order-1 lg:order-2 lg:col-span-6 rounded-2xl bg-white p-6 sm:p-8 shadow-[0_8px_30px_rgba(10,47,143,0.08)] border border-slate-100 flex flex-col justify-between">
               <div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-[#06194a]">
                   {c.form.title.normal}{" "}
@@ -222,11 +216,10 @@ export default function ContactPage() {
                   </button>
                 </form>
               </div>
-            </ScrollReveal>
+            </div>
           </div>
         </div>
       </section>
-      </ScrollReveal>
     </div>
   );
 }

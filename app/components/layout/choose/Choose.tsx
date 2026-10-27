@@ -50,7 +50,7 @@ export default function WhyChooseUs() {
 
   return (
     <ScrollReveal direction="none" duration={0.6}>
-    <section className="relative overflow-hidden bg-white pb-8 md:pb-12">
+    <section className="relative overflow-hidden bg-white py-8 md:pb-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}

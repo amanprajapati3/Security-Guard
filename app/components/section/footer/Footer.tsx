@@ -59,23 +59,33 @@ export default function SecurityFooter() {
         </div>
 
         {/* Link columns */}
-        <div className="lg:justify-self-center">
-          <h3 className="relative mb-5 pb-3 text-lg font-bold after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-10 after:bg-[#fdb913]">
-            {footer.columns.length === 2 ? "Useful Links" : footer.columns[0]?.title}
-          </h3>
-          <div className="grid grid-cols-2 gap-x-8 gap-y-2.5">
-            {footer.columns.flatMap((col) => col.links).map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="group flex items-center gap-1.5 text-sm text-white transition-all duration-300 hover:translate-x-1 hover:text-[#fdb913]"
-              >
-                <ChevronRight size={14} className="text-[#fdb913]" />
-                {link.label}
-              </Link>
-            ))}
-          </div>
+        
+{/* Link columns */}
+<div className="lg:justify-self-center">
+  <div className="grid grid-cols-2 gap-x-8 gap-y-2.5">
+    {footer.columns.map((col) => (
+      <div key={col.title} className="min-w-0">
+        <h3 className="relative mb-5 pb-3 text-lg font-bold after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-10 after:bg-[#fdb913]">
+          {col.title}
+        </h3>
+
+        <div className="flex flex-col gap-2.5">
+          {col.links.map((link) => (
+            <Link
+              key={`${link.label}-${link.href}`}
+              href={link.href}
+              className="group flex items-start gap-1.5 text-sm text-white transition-all duration-300 hover:translate-x-1 hover:text-[#fdb913]"
+            >
+              <ChevronRight size={14} className="mt-0.5 shrink-0 text-[#fdb913]" />
+              <span>{link.label}</span>
+            </Link>
+          ))}
         </div>
+      </div>
+    ))}
+  </div>
+</div>
+
 
         {/* Contact */}
         <div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import {
   LuChevronLeft,
   LuChevronRight,
@@ -66,8 +66,33 @@ export default function Gallery() {
 
   const [showAll, setShowAll] = useState(false);
   const [active, setActive] = useState<SecurityGalleryImage | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const visible = showAll ? images : images.slice(0, defaultCount);
+
+  /* Handle mobile scroll tracking for dots */
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const scrollLeft = scrollRef.current.scrollLeft;
+    const itemWidth = scrollRef.current.firstElementChild
+      ? (scrollRef.current.firstElementChild as HTMLElement).offsetWidth + 16
+      : 1;
+    const index = Math.round(scrollLeft / itemWidth);
+    setActiveIndex(Math.min(Math.max(index, 0), images.length - 1));
+  };
+
+  /* Scroll to specific slide when dot is clicked */
+  const scrollToSlide = (index: number) => {
+    if (!scrollRef.current) return;
+    const child = scrollRef.current.children[index] as HTMLElement;
+    if (child) {
+      scrollRef.current.scrollTo({
+        left: child.offsetLeft - scrollRef.current.offsetLeft,
+        behavior: "smooth",
+      });
+    }
+  };
 
   /* Slide to the previous / next image inside the dialog */
   const step = (delta: number) => {
@@ -97,141 +122,163 @@ export default function Gallery() {
       document.body.style.overflow = "";
     };
   }, [active, images]);
+
   return (
     <ScrollReveal direction="none" duration={0.6}>
-    <section className="bg-white py-8 md:py-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Heading: badge + title */}
-        <ScrollReveal as="div" direction="up" className="mx-auto max-w-4xl text-center">
-          <div className="flex items-center justify-center gap-3">
-            <span className="h-0.5 w-8 bg-[#fdb913] sm:w-10" />
-            <span className="text-xs font-bold uppercase text-[#06194a] sm:text-[13px] lg:text-[17px]">
-              {d.heading.badge}
-            </span>
-          </div>
-          <h2 className="mt-3 text-3xl font-bold leading-tight text-[#06194a] sm:text-4xl lg:text-[49px]">
-            {d.heading.title.split(" ").slice(0, -2).join(" ")}{" "}
-            <span className="text-[#fdb913]">
-              {d.heading.title.split(" ").slice(-2).join(" ")}
-            </span>
-          </h2>{" "}
-        </ScrollReveal>
+      <section className="bg-white py-8 md:py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Heading: badge + title */}
+          <ScrollReveal as="div" direction="up" className="mx-auto max-w-4xl text-center">
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-0.5 w-8 bg-[#fdb913] sm:w-10" />
+              <span className="text-xs font-bold uppercase text-[#06194a] sm:text-[13px] lg:text-[17px]">
+                {d.heading.badge}
+              </span>
+            </div>
+            <h2 className="mt-3 text-3xl font-bold leading-tight text-[#06194a] sm:text-4xl lg:text-[49px]">
+              {d.heading.title.split(" ").slice(0, -2).join(" ")}{" "}
+              <span className="text-[#fdb913]">
+                {d.heading.title.split(" ").slice(-2).join(" ")}
+              </span>
+            </h2>
+          </ScrollReveal>
 
-        {/* Mobile: horizontal scroll */}
-        <div className="mt-12 sm:hidden">
-          <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {/* Mobile: horizontal scroll with all images & dots */}
+          <div className="mt-12 sm:hidden">
+            <div
+              ref={scrollRef}
+              onScroll={handleScroll}
+              className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            >
+              {images.map((image, i) => (
+                <div
+                  key={image.id}
+                  className="w-[78%] shrink-0 snap-start last:mr-4"
+                >
+                  <ScrollReveal as="div" index={i} staggerChildren={0.08} className="w-full">
+                    <GalleryTile image={image} onOpen={setActive} />
+                  </ScrollReveal>
+                </div>
+              ))}
+            </div>
+
+            {/* Pagination Dots */}
+            <div className="mt-5 flex justify-center items-center gap-2">
+              {images.map((_, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => scrollToSlide(idx)}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
+                    activeIndex === idx
+                      ? "w-8 bg-[#fdb913]"
+                      : "w-2.5 bg-[#06194a]/20 hover:bg-[#06194a]/40"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Tablet & Desktop: 2 or 4 per row */}
+          <div className="mt-12 hidden sm:grid sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
             {visible.map((image, i) => (
-              <div
-                key={image.id}
-                className="w-[78%] shrink-0 snap-start last:mr-4"
-              >
-                <ScrollReveal as="div" index={i} staggerChildren={0.08} className="w-full">
-                  <GalleryTile image={image} onOpen={setActive} />
-                </ScrollReveal>
-              </div>
+              <ScrollReveal as="div" key={image.id} index={i} staggerChildren={0.08} className="w-full">
+                <GalleryTile image={image} onOpen={setActive} />
+              </ScrollReveal>
             ))}
           </div>
+
+          {/* Load more / show less (Hidden on mobile) */}
+          <div className="mt-10 hidden sm:flex justify-center">
+            {showAll ? (
+              <button
+                type="button"
+                onClick={() => setShowAll(false)}
+                className="btn-fill-tl [--btn-fill:#06194a] [--btn-hover:#ffffff] inline-flex cursor-pointer items-center gap-3 rounded-full border-2 border-[#06194a] py-2 pl-6 pr-2 text-sm font-bold text-[#06194a] sm:text-base"
+              >
+                Show Less
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#06194a] text-white transition-colors">
+                  <LuMinus size={18} />
+                </span>
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setShowAll(true)}
+                className="btn-fill-tr [--btn-fill:#06194a] [--btn-hover:#fdb913] inline-flex cursor-pointer items-center gap-3 rounded-full bg-[#fdb913] py-2 pl-6 pr-2 text-sm font-bold text-[#06194a] shadow-lg sm:text-base"
+              >
+                Load More
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#06194a] text-white">
+                  <LuPlus size={18} />
+                </span>
+              </button>
+            )}
+          </div>
         </div>
 
-        {/* Tablet: 2 per row, Desktop: 4 per row */}
-        <div className="mt-12 hidden sm:grid sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
-          {visible.map((image, i) => (
-            <ScrollReveal as="div" key={image.id} index={i} staggerChildren={0.08} className="w-full">
-              <GalleryTile image={image} onOpen={setActive} />
-            </ScrollReveal>
-          ))}
-        </div>
-
-        {/* Load more / show less */}
-        <div className="mt-10 flex justify-center">
-          {showAll ? (
-            <button
-              type="button"
-              onClick={() => setShowAll(false)}
-              className="btn-fill-tl [--btn-fill:#06194a] [--btn-hover:#ffffff] inline-flex cursor-pointer items-center gap-3 rounded-full border-2 border-[#06194a] py-2 pl-6 pr-2 text-sm font-bold text-[#06194a] sm:text-base"
-            >
-              Show Less
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#06194a] text-white transition-colors">
-                <LuMinus size={18} />
-              </span>
-            </button>
-          ) : (
-            <button
-              type="button"
-              onClick={() => setShowAll(true)}
-              className="btn-fill-tr [--btn-fill:#06194a] [--btn-hover:#fdb913] inline-flex cursor-pointer items-center gap-3 rounded-full bg-[#fdb913] py-2 pl-6 pr-2 text-sm font-bold text-[#06194a] shadow-lg sm:text-base"
-            >
-              Load More
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#06194a] text-white">
-                <LuPlus size={18} />
-              </span>
-            </button>
-          )}
-        </div>
-      </div>
-
-      {/* Lightbox dialog */}
-      {active && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={active.title}
-          onClick={() => setActive(null)}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-4 sm:p-8"
-        >
-          <button
-            type="button"
-            aria-label="Close image"
+        {/* Lightbox dialog */}
+        {active && (
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label={active.title}
             onClick={() => setActive(null)}
-            className="absolute cursor-pointer right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-[#06194a]/70 text-white backdrop-blur transition-colors duration-300 hover:bg-[#fdb913] hover:text-[#06194a]"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-4 sm:p-8"
           >
-            <LuX size={24} />
-          </button>
+            <button
+              type="button"
+              aria-label="Close image"
+              onClick={() => setActive(null)}
+              className="absolute cursor-pointer right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-[#06194a]/70 text-white backdrop-blur transition-colors duration-300 hover:bg-[#fdb913] hover:text-[#06194a]"
+            >
+              <LuX size={24} />
+            </button>
 
-          <button
-            type="button"
-            aria-label="Previous image"
-            onClick={(event) => {
-              event.stopPropagation();
-              step(-1);
-            }}
-            className="absolute left-2 cursor-pointer top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-[#06194a]/70 text-white backdrop-blur overflow-hidden transition-all duration-300 hover:bg-[#fdb913] hover:text-[#06194a] sm:left-6 sm:h-12 sm:w-12"
-          >
-            <LuChevronLeft size={26} />
-          </button>
+            <button
+              type="button"
+              aria-label="Previous image"
+              onClick={(event) => {
+                event.stopPropagation();
+                step(-1);
+              }}
+              className="absolute left-2 cursor-pointer top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-[#06194a]/70 text-white backdrop-blur overflow-hidden transition-all duration-300 hover:bg-[#fdb913] hover:text-[#06194a] sm:left-6 sm:h-12 sm:w-12"
+            >
+              <LuChevronLeft size={26} />
+            </button>
 
-          <button
-            type="button"
-            aria-label="Next image"
-            onClick={(event) => {
-              event.stopPropagation();
-              step(1);
-            }}
-            className="absolute right-2 cursor-pointer top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-[#06194a]/70 text-white backdrop-blur overflow-hidden transition-all duration-300 hover:bg-[#fdb913] hover:text-[#06194a] sm:right-6 sm:h-12 sm:w-12"
-          >
-            <LuChevronRight size={26} />
-          </button>
+            <button
+              type="button"
+              aria-label="Next image"
+              onClick={(event) => {
+                event.stopPropagation();
+                step(1);
+              }}
+              className="absolute right-2 cursor-pointer top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-[#06194a]/70 text-white backdrop-blur overflow-hidden transition-all duration-300 hover:bg-[#fdb913] hover:text-[#06194a] sm:right-6 sm:h-12 sm:w-12"
+            >
+              <LuChevronRight size={26} />
+            </button>
 
-          <figure
-            className="w-full max-w-3xl px-12 sm:max-w-4xl sm:px-20"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="relative aspect-[4/3] w-full sm:aspect-[16/10]">
-              <Image
-                src={active.image}
-                alt={active.title}
-                fill
-                sizes="(max-width: 1024px) 92vw, 896px"
-                className="object-contain drop-shadow-2xl"
-              />
-            </div>
-            <figcaption className="mt-3 text-center text-sm font-bold uppercase tracking-[0.15em] text-white sm:text-base">
-              {active.title}
-            </figcaption>
-          </figure>
-        </div>
-      )}
-    </section>
+            <figure
+              className="w-full max-w-3xl px-12 sm:max-w-4xl sm:px-20"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="relative aspect-[4/3] w-full sm:aspect-[16/10]">
+                <Image
+                  src={active.image}
+                  alt={active.title}
+                  fill
+                  sizes="(max-width: 1024px) 92vw, 896px"
+                  className="object-contain drop-shadow-2xl"
+                />
+              </div>
+              <figcaption className="mt-3 text-center text-sm font-bold uppercase tracking-[0.15em] text-white sm:text-base">
+                {active.title}
+              </figcaption>
+            </figure>
+          </div>
+        )}
+      </section>
     </ScrollReveal>
   );
 }
